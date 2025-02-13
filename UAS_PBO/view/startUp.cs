@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UAS_PBO.view
@@ -15,6 +8,19 @@ namespace UAS_PBO.view
         public startUp()
         {
             InitializeComponent();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ProgressBar.Width += 3;
+            if (ProgressBar.Width >= 599)
+            {
+                timer1.Stop();
+                this.Hide();
+                FormCustomerDashboard dashboard = new FormCustomerDashboard();
+                dashboard.Show();
+            }
+
         }
     }
 }

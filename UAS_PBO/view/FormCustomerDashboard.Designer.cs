@@ -32,11 +32,12 @@
             // 
             // FormCustomerDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 553);
+            this.ClientSize = new System.Drawing.Size(719, 359);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormCustomerDashboard";
-            this.Text = "Login - Rental Audio";
+            this.Text = "Customer Dashboard";
             this.ResumeLayout(false);
 
         }
