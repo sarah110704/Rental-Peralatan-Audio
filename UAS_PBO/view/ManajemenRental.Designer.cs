@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonlogoutmr = new System.Windows.Forms.Button();
             this.buttonManajemenrental = new System.Windows.Forms.Button();
             this.buttonManajemenequipment = new System.Windows.Forms.Button();
             this.buttonManajemenuser = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.buttnrfrsh = new System.Windows.Forms.Button();
             this.bttnEdt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonlogoutmr = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,6 +78,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(137, 450);
             this.panel4.TabIndex = 4;
+            // 
+            // buttonlogoutmr
+            // 
+            this.buttonlogoutmr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.buttonlogoutmr.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonlogoutmr.ForeColor = System.Drawing.Color.White;
+            this.buttonlogoutmr.Location = new System.Drawing.Point(0, 396);
+            this.buttonlogoutmr.Name = "buttonlogoutmr";
+            this.buttonlogoutmr.Size = new System.Drawing.Size(138, 54);
+            this.buttonlogoutmr.TabIndex = 4;
+            this.buttonlogoutmr.Text = "LOGOUT";
+            this.buttonlogoutmr.UseVisualStyleBackColor = false;
             // 
             // buttonManajemenrental
             // 
@@ -185,7 +197,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 97);
+            this.dataGridView1.Location = new System.Drawing.Point(29, 82);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(619, 219);
             this.dataGridView1.TabIndex = 20;
@@ -194,11 +206,11 @@
             // 
             this.tbxSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbxSearch.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbxSearch.Location = new System.Drawing.Point(10, 26);
+            this.tbxSearch.Location = new System.Drawing.Point(29, 29);
             this.tbxSearch.Margin = new System.Windows.Forms.Padding(2);
             this.tbxSearch.Multiline = true;
             this.tbxSearch.Name = "tbxSearch";
-            this.tbxSearch.Size = new System.Drawing.Size(649, 30);
+            this.tbxSearch.Size = new System.Drawing.Size(619, 30);
             this.tbxSearch.TabIndex = 18;
             this.tbxSearch.Text = "Search";
             // 
@@ -236,18 +248,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 1;
-            // 
-            // buttonlogoutmr
-            // 
-            this.buttonlogoutmr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.buttonlogoutmr.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonlogoutmr.ForeColor = System.Drawing.Color.White;
-            this.buttonlogoutmr.Location = new System.Drawing.Point(0, 396);
-            this.buttonlogoutmr.Name = "buttonlogoutmr";
-            this.buttonlogoutmr.Size = new System.Drawing.Size(138, 54);
-            this.buttonlogoutmr.TabIndex = 4;
-            this.buttonlogoutmr.Text = "LOGOUT";
-            this.buttonlogoutmr.UseVisualStyleBackColor = false;
             // 
             // ManajemenRental
             // 

@@ -103,6 +103,7 @@
     <Compile Include="controller\RentalController.cs" />
     <Compile Include="controller\UserController.cs" />
     <Compile Include="model\M_Equipment.cs" />
+    <Compile Include="model\M_Rental.cs" />
     <Compile Include="model\M_User.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
