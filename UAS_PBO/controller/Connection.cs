@@ -5,7 +5,7 @@ namespace UAS_PBO.controller
 {
     internal class Connection
     {
-        string conectionstring = "Server=localhost; Database=pbo_rentalaudio; Uid=root; Pwd=;";
+        string conectionstring = "Server=localhost; Database=soundeasebandung; Uid=root; Pwd=;";
         MySqlConnection kon;
 
         public void OpenConnection()

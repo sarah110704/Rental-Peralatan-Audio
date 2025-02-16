@@ -67,7 +67,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -136,7 +135,6 @@
             this.rbPria.TabStop = true;
             this.rbPria.Text = "Pria";
             this.rbPria.UseVisualStyleBackColor = true;
-            this.rbPria.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // rbWanita
             // 
@@ -149,7 +147,6 @@
             this.rbWanita.TabStop = true;
             this.rbWanita.Text = "Wanita";
             this.rbWanita.UseVisualStyleBackColor = true;
-            this.rbWanita.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // button1
             // 
@@ -160,6 +157,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Create Account";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 

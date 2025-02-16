@@ -13,5 +13,10 @@ namespace UAS_PBO.view
         {
 
         }
+
+        private void bttnManajemenuser_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
