@@ -196,6 +196,7 @@
             this.tbSearch.Size = new System.Drawing.Size(248, 28);
             this.tbSearch.TabIndex = 18;
             this.tbSearch.Text = "Search";
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
             // tbEquipmentName
             // 

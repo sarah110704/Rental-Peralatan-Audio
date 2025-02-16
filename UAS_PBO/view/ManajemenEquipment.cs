@@ -18,14 +18,12 @@ namespace UAS_PBO.view
             TampilData();
         }
 
-        // ✅ Menampilkan semua data equipment di DataGridView
         public void TampilData()
         {
             try
             {
                 dgEquipment.Rows.Clear();
 
-                // Pastikan kolom tidak ditambahkan ulang setiap kali method dipanggil
                 if (dgEquipment.Columns.Count == 0)
                 {
                     dgEquipment.Columns.Add("id", "ID");
@@ -52,7 +50,6 @@ namespace UAS_PBO.view
             }
         }
 
-        // ✅ Pilih gambar untuk equipment
         private void btnDirectory_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -66,7 +63,6 @@ namespace UAS_PBO.view
             }
         }
 
-        // ✅ Simpan atau Edit Equipment
         private void btnsimpan_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbEquipmentName.Text) || string.IsNullOrWhiteSpace(tbPrice.Text) ||
@@ -121,7 +117,6 @@ namespace UAS_PBO.view
             TampilData();
         }
 
-        // ✅ Hapus Equipment
         private void btnhapus_Click(object sender, EventArgs e)
         {
             if (selectedEquipmentId == -1)
@@ -143,7 +138,6 @@ namespace UAS_PBO.view
             }
         }
 
-        // ✅ Edit Equipment
         private void bttnedit_Click(object sender, EventArgs e)
         {
             if (selectedEquipmentId == -1)
@@ -155,10 +149,9 @@ namespace UAS_PBO.view
             btnsimpan_Click(sender, e);
         }
 
-        // ✅ Pilih data dari DataGridView untuk diedit
         private void dgEquipment_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgEquipment.Rows.Count) // Pastikan baris valid
+            if (e.RowIndex >= 0 && e.RowIndex < dgEquipment.Rows.Count)
             {
                 DataGridViewRow row = dgEquipment.Rows[e.RowIndex];
 
@@ -177,7 +170,6 @@ namespace UAS_PBO.view
             }
         }
 
-        // ✅ Mencari equipment berdasarkan nama
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
             string keyword = tbSearch.Text.Trim();
@@ -190,14 +182,12 @@ namespace UAS_PBO.view
             }
         }
 
-        // ✅ Refresh Data
         private void buttnrfresh_Click(object sender, EventArgs e)
         {
             ClearForm();
             TampilData();
         }
 
-        // ✅ Mengosongkan Form Input
         private void ClearForm()
         {
             selectedEquipmentId = -1;
@@ -211,9 +201,28 @@ namespace UAS_PBO.view
             cbStatus.SelectedIndex = -1;
         }
 
+
+
         private void ManageEquipment_Load(object sender, EventArgs e)
         {
-            TampilData();
+            string keyword = tbSearch.Text.Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                TampilData(); 
+                return;
+            }
+
+            dgEquipment.Rows.Clear();
+
+            List<Equipment> equipmentList = equipmentController.SearchEquipment(keyword);
+
+            equipmentList.Sort((x, y) => string.Compare(x.Name, y.Name, StringComparison.OrdinalIgnoreCase));
+
+            foreach (var eq in equipmentList)
+            {
+                dgEquipment.Rows.Add(eq.Id, eq.Name, eq.Category, eq.Brand, eq.RentalPrice, eq.Stock, eq.Description, eq.ImagePath, eq.Status);
+            }
         }
     }
 }
