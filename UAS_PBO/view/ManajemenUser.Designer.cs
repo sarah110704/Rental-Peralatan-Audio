@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonlogoutmu = new System.Windows.Forms.Button();
             this.buttonmanajemenrental = new System.Windows.Forms.Button();
             this.buttonmanajemenequipment = new System.Windows.Forms.Button();
             this.buttonmanajemenuser = new System.Windows.Forms.Button();
@@ -38,24 +39,28 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tbxPhoneNmbr = new System.Windows.Forms.TextBox();
-            this.tbxsearchhh = new System.Windows.Forms.TextBox();
-            this.tbxAddress = new System.Windows.Forms.TextBox();
-            this.bttnhps = new System.Windows.Forms.Button();
-            this.buttnrfrsh = new System.Windows.Forms.Button();
-            this.bttnedt = new System.Windows.Forms.Button();
-            this.bttnsmpn = new System.Windows.Forms.Button();
-            this.tbxPassword = new System.Windows.Forms.TextBox();
-            this.tbxUsername = new System.Windows.Forms.TextBox();
+            this.dgUser = new System.Windows.Forms.DataGridView();
+            this.tbPhoneNumber = new System.Windows.Forms.TextBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.tbAddress = new System.Windows.Forms.TextBox();
+            this.btnHapus = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSimpan = new System.Windows.Forms.Button();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.buttonlogoutmu = new System.Windows.Forms.Button();
+            this.tbID = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.cbGender = new System.Windows.Forms.ComboBox();
+            this.cbRole = new System.Windows.Forms.ComboBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbHashedPassword = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,6 +89,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(137, 450);
             this.panel4.TabIndex = 5;
+            // 
+            // buttonlogoutmu
+            // 
+            this.buttonlogoutmu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.buttonlogoutmu.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonlogoutmu.ForeColor = System.Drawing.Color.White;
+            this.buttonlogoutmu.Location = new System.Drawing.Point(0, 398);
+            this.buttonlogoutmu.Name = "buttonlogoutmu";
+            this.buttonlogoutmu.Size = new System.Drawing.Size(138, 54);
+            this.buttonlogoutmu.TabIndex = 4;
+            this.buttonlogoutmu.Text = "LOGOUT";
+            this.buttonlogoutmu.UseVisualStyleBackColor = false;
             // 
             // buttonmanajemenrental
             // 
@@ -176,127 +193,138 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Controls.Add(this.tbxPhoneNmbr);
-            this.panel3.Controls.Add(this.tbxsearchhh);
-            this.panel3.Controls.Add(this.tbxAddress);
-            this.panel3.Controls.Add(this.bttnhps);
-            this.panel3.Controls.Add(this.buttnrfrsh);
-            this.panel3.Controls.Add(this.bttnedt);
-            this.panel3.Controls.Add(this.bttnsmpn);
-            this.panel3.Controls.Add(this.tbxPassword);
-            this.panel3.Controls.Add(this.tbxUsername);
+            this.panel3.Controls.Add(this.tbHashedPassword);
+            this.panel3.Controls.Add(this.tbPassword);
+            this.panel3.Controls.Add(this.cbRole);
+            this.panel3.Controls.Add(this.cbGender);
+            this.panel3.Controls.Add(this.tbLastName);
+            this.panel3.Controls.Add(this.tbID);
+            this.panel3.Controls.Add(this.dgUser);
+            this.panel3.Controls.Add(this.tbPhoneNumber);
+            this.panel3.Controls.Add(this.tbSearch);
+            this.panel3.Controls.Add(this.tbAddress);
+            this.panel3.Controls.Add(this.btnHapus);
+            this.panel3.Controls.Add(this.btnRefresh);
+            this.panel3.Controls.Add(this.btnEdit);
+            this.panel3.Controls.Add(this.btnSimpan);
+            this.panel3.Controls.Add(this.tbFirstName);
+            this.panel3.Controls.Add(this.tbUsername);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.button3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(137, 49);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(663, 401);
             this.panel3.TabIndex = 3;
             // 
-            // dataGridView1
+            // dgUser
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 206);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(608, 169);
-            this.dataGridView1.TabIndex = 20;
+            this.dgUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUser.Location = new System.Drawing.Point(29, 206);
+            this.dgUser.Name = "dgUser";
+            this.dgUser.Size = new System.Drawing.Size(608, 169);
+            this.dgUser.TabIndex = 20;
+            this.dgUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUser_CellClick);
             // 
-            // tbxPhoneNmbr
+            // tbPhoneNumber
             // 
-            this.tbxPhoneNmbr.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbxPhoneNmbr.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbxPhoneNmbr.Location = new System.Drawing.Point(29, 151);
-            this.tbxPhoneNmbr.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxPhoneNmbr.Multiline = true;
-            this.tbxPhoneNmbr.Name = "tbxPhoneNmbr";
-            this.tbxPhoneNmbr.Size = new System.Drawing.Size(152, 27);
-            this.tbxPhoneNmbr.TabIndex = 19;
-            this.tbxPhoneNmbr.Text = "Phone Number";
+            this.tbPhoneNumber.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbPhoneNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbPhoneNumber.Location = new System.Drawing.Point(29, 172);
+            this.tbPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPhoneNumber.Multiline = true;
+            this.tbPhoneNumber.Name = "tbPhoneNumber";
+            this.tbPhoneNumber.Size = new System.Drawing.Size(173, 27);
+            this.tbPhoneNumber.TabIndex = 19;
+            this.tbPhoneNumber.Text = "Phone Number";
             // 
-            // tbxsearchhh
+            // tbSearch
             // 
-            this.tbxsearchhh.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbxsearchhh.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbxsearchhh.Location = new System.Drawing.Point(407, 150);
-            this.tbxsearchhh.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxsearchhh.Multiline = true;
-            this.tbxsearchhh.Name = "tbxsearchhh";
-            this.tbxsearchhh.Size = new System.Drawing.Size(230, 28);
-            this.tbxsearchhh.TabIndex = 18;
-            this.tbxsearchhh.Text = "Search";
+            this.tbSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbSearch.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tbSearch.Location = new System.Drawing.Point(410, 169);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSearch.Multiline = true;
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(222, 24);
+            this.tbSearch.TabIndex = 18;
+            this.tbSearch.Text = "Search";
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
-            // tbxAddress
+            // tbAddress
             // 
-            this.tbxAddress.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbxAddress.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbxAddress.Location = new System.Drawing.Point(218, 95);
-            this.tbxAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxAddress.Multiline = true;
-            this.tbxAddress.Name = "tbxAddress";
-            this.tbxAddress.Size = new System.Drawing.Size(152, 27);
-            this.tbxAddress.TabIndex = 16;
-            this.tbxAddress.Text = "Address";
+            this.tbAddress.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbAddress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbAddress.Location = new System.Drawing.Point(29, 126);
+            this.tbAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAddress.Multiline = true;
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.Size = new System.Drawing.Size(173, 27);
+            this.tbAddress.TabIndex = 16;
+            this.tbAddress.Text = "Address";
             // 
-            // bttnhps
+            // btnHapus
             // 
-            this.bttnhps.Location = new System.Drawing.Point(407, 96);
-            this.bttnhps.Name = "bttnhps";
-            this.bttnhps.Size = new System.Drawing.Size(107, 27);
-            this.bttnhps.TabIndex = 13;
-            this.bttnhps.Text = "Hapus";
-            this.bttnhps.UseVisualStyleBackColor = true;
+            this.btnHapus.Location = new System.Drawing.Point(410, 126);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(99, 27);
+            this.btnHapus.TabIndex = 13;
+            this.btnHapus.Text = "Hapus";
+            this.btnHapus.UseVisualStyleBackColor = true;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click_1);
             // 
-            // buttnrfrsh
+            // btnRefresh
             // 
-            this.buttnrfrsh.Location = new System.Drawing.Point(538, 95);
-            this.buttnrfrsh.Name = "buttnrfrsh";
-            this.buttnrfrsh.Size = new System.Drawing.Size(99, 27);
-            this.buttnrfrsh.TabIndex = 12;
-            this.buttnrfrsh.Text = "Refresh";
-            this.buttnrfrsh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Location = new System.Drawing.Point(533, 126);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(99, 27);
+            this.btnRefresh.TabIndex = 12;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click_1);
             // 
-            // bttnedt
+            // btnEdit
             // 
-            this.bttnedt.Location = new System.Drawing.Point(538, 41);
-            this.bttnedt.Name = "bttnedt";
-            this.bttnedt.Size = new System.Drawing.Size(99, 27);
-            this.bttnedt.TabIndex = 11;
-            this.bttnedt.Text = "Edit";
-            this.bttnedt.UseVisualStyleBackColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(533, 81);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(99, 28);
+            this.btnEdit.TabIndex = 11;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click_1);
             // 
-            // bttnsmpn
+            // btnSimpan
             // 
-            this.bttnsmpn.Location = new System.Drawing.Point(407, 39);
-            this.bttnsmpn.Name = "bttnsmpn";
-            this.bttnsmpn.Size = new System.Drawing.Size(107, 28);
-            this.bttnsmpn.TabIndex = 10;
-            this.bttnsmpn.Text = "Simpan";
-            this.bttnsmpn.UseVisualStyleBackColor = true;
+            this.btnSimpan.Location = new System.Drawing.Point(410, 81);
+            this.btnSimpan.Name = "btnSimpan";
+            this.btnSimpan.Size = new System.Drawing.Size(99, 28);
+            this.btnSimpan.TabIndex = 10;
+            this.btnSimpan.Text = "Simpan";
+            this.btnSimpan.UseVisualStyleBackColor = true;
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click_1);
             // 
-            // tbxPassword
+            // tbFirstName
             // 
-            this.tbxPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbxPassword.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbxPassword.Location = new System.Drawing.Point(29, 95);
-            this.tbxPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxPassword.Multiline = true;
-            this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.Size = new System.Drawing.Size(152, 27);
-            this.tbxPassword.TabIndex = 9;
-            this.tbxPassword.Text = "Password";
+            this.tbFirstName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbFirstName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbFirstName.Location = new System.Drawing.Point(29, 82);
+            this.tbFirstName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbFirstName.Multiline = true;
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(173, 27);
+            this.tbFirstName.TabIndex = 9;
+            this.tbFirstName.Text = "FirstName";
             // 
-            // tbxUsername
+            // tbUsername
             // 
-            this.tbxUsername.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbxUsername.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbxUsername.Location = new System.Drawing.Point(218, 40);
-            this.tbxUsername.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxUsername.Multiline = true;
-            this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Size = new System.Drawing.Size(152, 27);
-            this.tbxUsername.TabIndex = 8;
-            this.tbxUsername.Text = "Username";
+            this.tbUsername.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbUsername.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbUsername.Location = new System.Drawing.Point(79, 29);
+            this.tbUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.tbUsername.Multiline = true;
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(123, 24);
+            this.tbUsername.TabIndex = 8;
+            this.tbUsername.Text = "Username";
             // 
             // label1
             // 
@@ -306,26 +334,78 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 1;
             // 
-            // button3
+            // tbID
             // 
-            this.button3.Location = new System.Drawing.Point(29, 40);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(152, 27);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "ID";
-            this.button3.UseVisualStyleBackColor = true;
+            this.tbID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbID.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbID.Location = new System.Drawing.Point(29, 29);
+            this.tbID.Margin = new System.Windows.Forms.Padding(2);
+            this.tbID.Multiline = true;
+            this.tbID.Name = "tbID";
+            this.tbID.ReadOnly = true;
+            this.tbID.Size = new System.Drawing.Size(37, 24);
+            this.tbID.TabIndex = 21;
+            this.tbID.Text = "ID";
+            this.tbID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // buttonlogoutmu
+            // tbLastName
             // 
-            this.buttonlogoutmu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.buttonlogoutmu.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonlogoutmu.ForeColor = System.Drawing.Color.White;
-            this.buttonlogoutmu.Location = new System.Drawing.Point(0, 398);
-            this.buttonlogoutmu.Name = "buttonlogoutmu";
-            this.buttonlogoutmu.Size = new System.Drawing.Size(138, 54);
-            this.buttonlogoutmu.TabIndex = 4;
-            this.buttonlogoutmu.Text = "LOGOUT";
-            this.buttonlogoutmu.UseVisualStyleBackColor = false;
+            this.tbLastName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbLastName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbLastName.Location = new System.Drawing.Point(222, 82);
+            this.tbLastName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbLastName.Multiline = true;
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(167, 27);
+            this.tbLastName.TabIndex = 22;
+            this.tbLastName.Text = "LastName";
+            // 
+            // cbGender
+            // 
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "Pria",
+            "Wanita"});
+            this.cbGender.Location = new System.Drawing.Point(222, 128);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(167, 21);
+            this.cbGender.TabIndex = 23;
+            // 
+            // cbRole
+            // 
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.Items.AddRange(new object[] {
+            "Customer",
+            "Admin"});
+            this.cbRole.Location = new System.Drawing.Point(222, 172);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(167, 21);
+            this.cbRole.TabIndex = 24;
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbPassword.Location = new System.Drawing.Point(224, 29);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPassword.Multiline = true;
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(165, 24);
+            this.tbPassword.TabIndex = 25;
+            this.tbPassword.Text = "Password";
+            // 
+            // tbHashedPassword
+            // 
+            this.tbHashedPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbHashedPassword.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tbHashedPassword.Location = new System.Drawing.Point(410, 29);
+            this.tbHashedPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.tbHashedPassword.Multiline = true;
+            this.tbHashedPassword.Name = "tbHashedPassword";
+            this.tbHashedPassword.ReadOnly = true;
+            this.tbHashedPassword.Size = new System.Drawing.Size(222, 24);
+            this.tbHashedPassword.TabIndex = 26;
+            this.tbHashedPassword.Text = "Hashed Password";
             // 
             // ManajemenUser
             // 
@@ -342,7 +422,7 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,23 +434,28 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button bttnhps;
-        private System.Windows.Forms.Button buttnrfrsh;
-        private System.Windows.Forms.Button bttnedt;
-        private System.Windows.Forms.Button bttnsmpn;
-        private System.Windows.Forms.TextBox tbxPassword;
-        private System.Windows.Forms.TextBox tbxUsername;
-        private System.Windows.Forms.TextBox tbxAddress;
-        private System.Windows.Forms.TextBox tbxsearchhh;
-        private System.Windows.Forms.TextBox tbxPhoneNmbr;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnHapus;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSimpan;
+        private System.Windows.Forms.TextBox tbFirstName;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.TextBox tbAddress;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.TextBox tbPhoneNumber;
+        private System.Windows.Forms.DataGridView dgUser;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button buttonmanajemenrental;
         private System.Windows.Forms.Button buttonmanajemenequipment;
         private System.Windows.Forms.Button buttonmanajemenuser;
         private System.Windows.Forms.Button buttondashboardadmin;
         private System.Windows.Forms.Button buttonlogoutmu;
+        private System.Windows.Forms.TextBox tbID;
+        private System.Windows.Forms.ComboBox cbGender;
+        private System.Windows.Forms.TextBox tbLastName;
+        private System.Windows.Forms.TextBox tbHashedPassword;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.ComboBox cbRole;
     }
 }

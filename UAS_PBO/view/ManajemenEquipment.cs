@@ -18,12 +18,14 @@ namespace UAS_PBO.view
             TampilData();
         }
 
+        // ✅ Menampilkan semua data equipment di DataGridView
         public void TampilData()
         {
             try
             {
                 dgEquipment.Rows.Clear();
 
+                // Pastikan kolom tidak ditambahkan ulang setiap kali method dipanggil
                 if (dgEquipment.Columns.Count == 0)
                 {
                     dgEquipment.Columns.Add("id", "ID");
@@ -49,6 +51,9 @@ namespace UAS_PBO.view
                 MessageBox.Show("Error saat menampilkan data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
 
         private void btnDirectory_Click(object sender, EventArgs e)
         {

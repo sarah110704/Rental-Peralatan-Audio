@@ -224,7 +224,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="db\" />
     <Folder Include="view\Assets\equipment\" />
     <Folder Include="view\icon\" />
   </ItemGroup>
@@ -233,6 +232,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download %281%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="db\UASPBO.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
