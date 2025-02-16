@@ -17,8 +17,8 @@ namespace UAS_PBO.view
             {
                 timer1.Stop();
                 this.Hide();
-                FormCustomerDashboard dashboard = new FormCustomerDashboard();
-                dashboard.Show();
+                FormLogin login = new FormLogin();
+                login.Show();
             }
 
         }

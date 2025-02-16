@@ -98,11 +98,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controller\AudioController.cs" />
-    <Compile Include="controller\AuthController.cs" />
     <Compile Include="controller\Connection.cs" />
+    <Compile Include="controller\EquipmentController.cs" />
     <Compile Include="controller\RentalController.cs" />
     <Compile Include="controller\UserController.cs" />
+    <Compile Include="model\M_Equipment.cs" />
     <Compile Include="model\M_User.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -158,6 +158,18 @@
     </Compile>
     <Compile Include="view\ManajemenUser.Designer.cs">
       <DependentUpon>ManajemenUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\ParentAdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ParentAdminDashboard.Designer.cs">
+      <DependentUpon>ParentAdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\ParentCustomerDahsboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ParentCustomerDahsboard.Designer.cs">
+      <DependentUpon>ParentCustomerDahsboard.cs</DependentUpon>
     </Compile>
     <Compile Include="view\startUp.cs">
       <SubType>Form</SubType>
@@ -215,12 +227,6 @@
     <Folder Include="db\" />
     <Folder Include="view\Assets\equipment\" />
     <Folder Include="view\icon\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="view\Assets\account_circle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="view\Assets\circle_account.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="view\Assets\30.png" />

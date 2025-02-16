@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using UAS_PBO.view;
 
 
 namespace UAS_PBO
@@ -14,7 +15,7 @@ namespace UAS_PBO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Application.Run(new ManajemenEquipment());
         }
     }
 }
