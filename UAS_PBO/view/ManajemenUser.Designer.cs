@@ -29,10 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonmanajemenrental = new System.Windows.Forms.Button();
+            this.buttonmanajemenequipment = new System.Windows.Forms.Button();
+            this.buttonmanajemenuser = new System.Windows.Forms.Button();
+            this.buttondashboardadmin = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbxPhoneNmbr = new System.Windows.Forms.TextBox();
+            this.tbxsearchhh = new System.Windows.Forms.TextBox();
+            this.tbxAddress = new System.Windows.Forms.TextBox();
             this.bttnhps = new System.Windows.Forms.Button();
             this.buttnrfrsh = new System.Windows.Forms.Button();
             this.bttnedt = new System.Windows.Forms.Button();
@@ -41,20 +50,12 @@
             this.tbxUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.tbxAddress = new System.Windows.Forms.TextBox();
-            this.tbxsearchhh = new System.Windows.Forms.TextBox();
-            this.tbxPhoneNmbr = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.buttonmanajemenrental = new System.Windows.Forms.Button();
-            this.buttonmanajemenequipment = new System.Windows.Forms.Button();
-            this.buttonmanajemenuser = new System.Windows.Forms.Button();
-            this.buttondashboardadmin = new System.Windows.Forms.Button();
+            this.buttonlogoutmu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,6 +69,73 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(137, 450);
             this.panel1.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.panel4.Controls.Add(this.buttonlogoutmu);
+            this.panel4.Controls.Add(this.buttonmanajemenrental);
+            this.panel4.Controls.Add(this.buttonmanajemenequipment);
+            this.panel4.Controls.Add(this.buttonmanajemenuser);
+            this.panel4.Controls.Add(this.buttondashboardadmin);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(137, 450);
+            this.panel4.TabIndex = 5;
+            // 
+            // buttonmanajemenrental
+            // 
+            this.buttonmanajemenrental.FlatAppearance.BorderSize = 0;
+            this.buttonmanajemenrental.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonmanajemenrental.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonmanajemenrental.ForeColor = System.Drawing.Color.White;
+            this.buttonmanajemenrental.Location = new System.Drawing.Point(-10, 131);
+            this.buttonmanajemenrental.Name = "buttonmanajemenrental";
+            this.buttonmanajemenrental.Size = new System.Drawing.Size(156, 27);
+            this.buttonmanajemenrental.TabIndex = 3;
+            this.buttonmanajemenrental.Text = "Manajemen Rental";
+            this.buttonmanajemenrental.UseVisualStyleBackColor = true;
+            // 
+            // buttonmanajemenequipment
+            // 
+            this.buttonmanajemenequipment.FlatAppearance.BorderSize = 0;
+            this.buttonmanajemenequipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonmanajemenequipment.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonmanajemenequipment.ForeColor = System.Drawing.Color.White;
+            this.buttonmanajemenequipment.Location = new System.Drawing.Point(-10, 171);
+            this.buttonmanajemenequipment.Name = "buttonmanajemenequipment";
+            this.buttonmanajemenequipment.Size = new System.Drawing.Size(156, 27);
+            this.buttonmanajemenequipment.TabIndex = 2;
+            this.buttonmanajemenequipment.Text = "Manajemen Equipment";
+            this.buttonmanajemenequipment.UseVisualStyleBackColor = true;
+            // 
+            // buttonmanajemenuser
+            // 
+            this.buttonmanajemenuser.FlatAppearance.BorderSize = 0;
+            this.buttonmanajemenuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonmanajemenuser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonmanajemenuser.ForeColor = System.Drawing.Color.White;
+            this.buttonmanajemenuser.Location = new System.Drawing.Point(-10, 89);
+            this.buttonmanajemenuser.Name = "buttonmanajemenuser";
+            this.buttonmanajemenuser.Size = new System.Drawing.Size(156, 27);
+            this.buttonmanajemenuser.TabIndex = 1;
+            this.buttonmanajemenuser.Text = "Manajemen User";
+            this.buttonmanajemenuser.UseVisualStyleBackColor = true;
+            // 
+            // buttondashboardadmin
+            // 
+            this.buttondashboardadmin.FlatAppearance.BorderSize = 0;
+            this.buttondashboardadmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttondashboardadmin.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttondashboardadmin.ForeColor = System.Drawing.Color.White;
+            this.buttondashboardadmin.Location = new System.Drawing.Point(-10, 49);
+            this.buttondashboardadmin.Name = "buttondashboardadmin";
+            this.buttondashboardadmin.Size = new System.Drawing.Size(156, 27);
+            this.buttondashboardadmin.TabIndex = 0;
+            this.buttondashboardadmin.Text = "Dashboard Admin";
+            this.buttondashboardadmin.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -125,6 +193,50 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(663, 401);
             this.panel3.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(29, 206);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(608, 169);
+            this.dataGridView1.TabIndex = 20;
+            // 
+            // tbxPhoneNmbr
+            // 
+            this.tbxPhoneNmbr.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbxPhoneNmbr.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tbxPhoneNmbr.Location = new System.Drawing.Point(29, 151);
+            this.tbxPhoneNmbr.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxPhoneNmbr.Multiline = true;
+            this.tbxPhoneNmbr.Name = "tbxPhoneNmbr";
+            this.tbxPhoneNmbr.Size = new System.Drawing.Size(152, 27);
+            this.tbxPhoneNmbr.TabIndex = 19;
+            this.tbxPhoneNmbr.Text = "Phone Number";
+            // 
+            // tbxsearchhh
+            // 
+            this.tbxsearchhh.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbxsearchhh.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tbxsearchhh.Location = new System.Drawing.Point(407, 150);
+            this.tbxsearchhh.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxsearchhh.Multiline = true;
+            this.tbxsearchhh.Name = "tbxsearchhh";
+            this.tbxsearchhh.Size = new System.Drawing.Size(230, 28);
+            this.tbxsearchhh.TabIndex = 18;
+            this.tbxsearchhh.Text = "Search";
+            // 
+            // tbxAddress
+            // 
+            this.tbxAddress.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbxAddress.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tbxAddress.Location = new System.Drawing.Point(218, 95);
+            this.tbxAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxAddress.Multiline = true;
+            this.tbxAddress.Name = "tbxAddress";
+            this.tbxAddress.Size = new System.Drawing.Size(152, 27);
+            this.tbxAddress.TabIndex = 16;
+            this.tbxAddress.Text = "Address";
             // 
             // bttnhps
             // 
@@ -203,115 +315,17 @@
             this.button3.Text = "ID";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // tbxAddress
+            // buttonlogoutmu
             // 
-            this.tbxAddress.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbxAddress.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbxAddress.Location = new System.Drawing.Point(218, 95);
-            this.tbxAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxAddress.Multiline = true;
-            this.tbxAddress.Name = "tbxAddress";
-            this.tbxAddress.Size = new System.Drawing.Size(152, 27);
-            this.tbxAddress.TabIndex = 16;
-            this.tbxAddress.Text = "Address";
-            // 
-            // tbxsearchhh
-            // 
-            this.tbxsearchhh.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbxsearchhh.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbxsearchhh.Location = new System.Drawing.Point(407, 150);
-            this.tbxsearchhh.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxsearchhh.Multiline = true;
-            this.tbxsearchhh.Name = "tbxsearchhh";
-            this.tbxsearchhh.Size = new System.Drawing.Size(230, 28);
-            this.tbxsearchhh.TabIndex = 18;
-            this.tbxsearchhh.Text = "Search";
-            // 
-            // tbxPhoneNmbr
-            // 
-            this.tbxPhoneNmbr.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbxPhoneNmbr.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbxPhoneNmbr.Location = new System.Drawing.Point(29, 151);
-            this.tbxPhoneNmbr.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxPhoneNmbr.Multiline = true;
-            this.tbxPhoneNmbr.Name = "tbxPhoneNmbr";
-            this.tbxPhoneNmbr.Size = new System.Drawing.Size(152, 27);
-            this.tbxPhoneNmbr.TabIndex = 19;
-            this.tbxPhoneNmbr.Text = "Phone Number";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 206);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(608, 169);
-            this.dataGridView1.TabIndex = 20;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.panel4.Controls.Add(this.buttonmanajemenrental);
-            this.panel4.Controls.Add(this.buttonmanajemenequipment);
-            this.panel4.Controls.Add(this.buttonmanajemenuser);
-            this.panel4.Controls.Add(this.buttondashboardadmin);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(137, 450);
-            this.panel4.TabIndex = 5;
-            // 
-            // buttonmanajemenrental
-            // 
-            this.buttonmanajemenrental.FlatAppearance.BorderSize = 0;
-            this.buttonmanajemenrental.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonmanajemenrental.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonmanajemenrental.ForeColor = System.Drawing.Color.White;
-            this.buttonmanajemenrental.Location = new System.Drawing.Point(-10, 131);
-            this.buttonmanajemenrental.Name = "buttonmanajemenrental";
-            this.buttonmanajemenrental.Size = new System.Drawing.Size(156, 27);
-            this.buttonmanajemenrental.TabIndex = 3;
-            this.buttonmanajemenrental.Text = "Manajemen Rental";
-            this.buttonmanajemenrental.UseVisualStyleBackColor = true;
-            // 
-            // buttonmanajemenequipment
-            // 
-            this.buttonmanajemenequipment.FlatAppearance.BorderSize = 0;
-            this.buttonmanajemenequipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonmanajemenequipment.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonmanajemenequipment.ForeColor = System.Drawing.Color.White;
-            this.buttonmanajemenequipment.Location = new System.Drawing.Point(-10, 171);
-            this.buttonmanajemenequipment.Name = "buttonmanajemenequipment";
-            this.buttonmanajemenequipment.Size = new System.Drawing.Size(156, 27);
-            this.buttonmanajemenequipment.TabIndex = 2;
-            this.buttonmanajemenequipment.Text = "Manajemen Equipment";
-            this.buttonmanajemenequipment.UseVisualStyleBackColor = true;
-            // 
-            // buttonmanajemenuser
-            // 
-            this.buttonmanajemenuser.FlatAppearance.BorderSize = 0;
-            this.buttonmanajemenuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonmanajemenuser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonmanajemenuser.ForeColor = System.Drawing.Color.White;
-            this.buttonmanajemenuser.Location = new System.Drawing.Point(-10, 89);
-            this.buttonmanajemenuser.Name = "buttonmanajemenuser";
-            this.buttonmanajemenuser.Size = new System.Drawing.Size(156, 27);
-            this.buttonmanajemenuser.TabIndex = 1;
-            this.buttonmanajemenuser.Text = "Manajemen User";
-            this.buttonmanajemenuser.UseVisualStyleBackColor = true;
-            // 
-            // buttondashboardadmin
-            // 
-            this.buttondashboardadmin.FlatAppearance.BorderSize = 0;
-            this.buttondashboardadmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttondashboardadmin.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttondashboardadmin.ForeColor = System.Drawing.Color.White;
-            this.buttondashboardadmin.Location = new System.Drawing.Point(-10, 49);
-            this.buttondashboardadmin.Name = "buttondashboardadmin";
-            this.buttondashboardadmin.Size = new System.Drawing.Size(156, 27);
-            this.buttondashboardadmin.TabIndex = 0;
-            this.buttondashboardadmin.Text = "Dashboard Admin";
-            this.buttondashboardadmin.UseVisualStyleBackColor = true;
+            this.buttonlogoutmu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.buttonlogoutmu.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonlogoutmu.ForeColor = System.Drawing.Color.White;
+            this.buttonlogoutmu.Location = new System.Drawing.Point(0, 398);
+            this.buttonlogoutmu.Name = "buttonlogoutmu";
+            this.buttonlogoutmu.Size = new System.Drawing.Size(138, 54);
+            this.buttonlogoutmu.TabIndex = 4;
+            this.buttonlogoutmu.Text = "LOGOUT";
+            this.buttonlogoutmu.UseVisualStyleBackColor = false;
             // 
             // ManajemenUser
             // 
@@ -324,11 +338,11 @@
             this.Name = "ManajemenUser";
             this.Text = "ManajemenUser";
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -357,5 +371,6 @@
         private System.Windows.Forms.Button buttonmanajemenequipment;
         private System.Windows.Forms.Button buttonmanajemenuser;
         private System.Windows.Forms.Button buttondashboardadmin;
+        private System.Windows.Forms.Button buttonlogoutmu;
     }
 }

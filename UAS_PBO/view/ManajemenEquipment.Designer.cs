@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonManajemenRental = new System.Windows.Forms.Button();
+            this.buttonManajemenEquipment = new System.Windows.Forms.Button();
+            this.buttonManajemenUser = new System.Windows.Forms.Button();
             this.buttonDashboardAdmin = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -45,9 +48,7 @@
             this.tbxTahun = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.buttonManajemenUser = new System.Windows.Forms.Button();
-            this.buttonManajemenEquipment = new System.Windows.Forms.Button();
-            this.buttonManajemenRental = new System.Windows.Forms.Button();
+            this.buttonlogoutme = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -57,6 +58,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.panel1.Controls.Add(this.buttonlogoutme);
             this.panel1.Controls.Add(this.buttonManajemenRental);
             this.panel1.Controls.Add(this.buttonManajemenEquipment);
             this.panel1.Controls.Add(this.buttonManajemenUser);
@@ -67,6 +69,45 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(137, 450);
             this.panel1.TabIndex = 3;
+            // 
+            // buttonManajemenRental
+            // 
+            this.buttonManajemenRental.FlatAppearance.BorderSize = 0;
+            this.buttonManajemenRental.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonManajemenRental.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonManajemenRental.ForeColor = System.Drawing.Color.White;
+            this.buttonManajemenRental.Location = new System.Drawing.Point(-10, 131);
+            this.buttonManajemenRental.Name = "buttonManajemenRental";
+            this.buttonManajemenRental.Size = new System.Drawing.Size(156, 27);
+            this.buttonManajemenRental.TabIndex = 3;
+            this.buttonManajemenRental.Text = "Manajemen Rental";
+            this.buttonManajemenRental.UseVisualStyleBackColor = true;
+            // 
+            // buttonManajemenEquipment
+            // 
+            this.buttonManajemenEquipment.FlatAppearance.BorderSize = 0;
+            this.buttonManajemenEquipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonManajemenEquipment.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonManajemenEquipment.ForeColor = System.Drawing.Color.White;
+            this.buttonManajemenEquipment.Location = new System.Drawing.Point(-10, 171);
+            this.buttonManajemenEquipment.Name = "buttonManajemenEquipment";
+            this.buttonManajemenEquipment.Size = new System.Drawing.Size(156, 27);
+            this.buttonManajemenEquipment.TabIndex = 2;
+            this.buttonManajemenEquipment.Text = "Manajemen Equipment";
+            this.buttonManajemenEquipment.UseVisualStyleBackColor = true;
+            // 
+            // buttonManajemenUser
+            // 
+            this.buttonManajemenUser.FlatAppearance.BorderSize = 0;
+            this.buttonManajemenUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonManajemenUser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonManajemenUser.ForeColor = System.Drawing.Color.White;
+            this.buttonManajemenUser.Location = new System.Drawing.Point(-10, 89);
+            this.buttonManajemenUser.Name = "buttonManajemenUser";
+            this.buttonManajemenUser.Size = new System.Drawing.Size(156, 27);
+            this.buttonManajemenUser.TabIndex = 1;
+            this.buttonManajemenUser.Text = "Manajemen User";
+            this.buttonManajemenUser.UseVisualStyleBackColor = true;
             // 
             // buttonDashboardAdmin
             // 
@@ -189,7 +230,7 @@
             // 
             // bttnedit
             // 
-            this.bttnedit.Location = new System.Drawing.Point(552, 40);
+            this.bttnedit.Location = new System.Drawing.Point(539, 40);
             this.bttnedit.Name = "bttnedit";
             this.bttnedit.Size = new System.Drawing.Size(99, 27);
             this.bttnedit.TabIndex = 11;
@@ -246,44 +287,17 @@
             this.button3.Text = "ID";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // buttonManajemenUser
+            // buttonlogoutme
             // 
-            this.buttonManajemenUser.FlatAppearance.BorderSize = 0;
-            this.buttonManajemenUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonManajemenUser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonManajemenUser.ForeColor = System.Drawing.Color.White;
-            this.buttonManajemenUser.Location = new System.Drawing.Point(-10, 89);
-            this.buttonManajemenUser.Name = "buttonManajemenUser";
-            this.buttonManajemenUser.Size = new System.Drawing.Size(156, 27);
-            this.buttonManajemenUser.TabIndex = 1;
-            this.buttonManajemenUser.Text = "Manajemen User";
-            this.buttonManajemenUser.UseVisualStyleBackColor = true;
-            // 
-            // buttonManajemenEquipment
-            // 
-            this.buttonManajemenEquipment.FlatAppearance.BorderSize = 0;
-            this.buttonManajemenEquipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonManajemenEquipment.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonManajemenEquipment.ForeColor = System.Drawing.Color.White;
-            this.buttonManajemenEquipment.Location = new System.Drawing.Point(-10, 171);
-            this.buttonManajemenEquipment.Name = "buttonManajemenEquipment";
-            this.buttonManajemenEquipment.Size = new System.Drawing.Size(156, 27);
-            this.buttonManajemenEquipment.TabIndex = 2;
-            this.buttonManajemenEquipment.Text = "Manajemen Equipment";
-            this.buttonManajemenEquipment.UseVisualStyleBackColor = true;
-            // 
-            // buttonManajemenRental
-            // 
-            this.buttonManajemenRental.FlatAppearance.BorderSize = 0;
-            this.buttonManajemenRental.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonManajemenRental.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonManajemenRental.ForeColor = System.Drawing.Color.White;
-            this.buttonManajemenRental.Location = new System.Drawing.Point(-10, 131);
-            this.buttonManajemenRental.Name = "buttonManajemenRental";
-            this.buttonManajemenRental.Size = new System.Drawing.Size(156, 27);
-            this.buttonManajemenRental.TabIndex = 3;
-            this.buttonManajemenRental.Text = "Manajemen Rental";
-            this.buttonManajemenRental.UseVisualStyleBackColor = true;
+            this.buttonlogoutme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
+            this.buttonlogoutme.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonlogoutme.ForeColor = System.Drawing.Color.White;
+            this.buttonlogoutme.Location = new System.Drawing.Point(0, 396);
+            this.buttonlogoutme.Name = "buttonlogoutme";
+            this.buttonlogoutme.Size = new System.Drawing.Size(138, 54);
+            this.buttonlogoutme.TabIndex = 4;
+            this.buttonlogoutme.Text = "LOGOUT";
+            this.buttonlogoutme.UseVisualStyleBackColor = false;
             // 
             // ManajemenEquipment
             // 
@@ -326,5 +340,6 @@
         private System.Windows.Forms.Button buttonManajemenRental;
         private System.Windows.Forms.Button buttonManajemenEquipment;
         private System.Windows.Forms.Button buttonManajemenUser;
+        private System.Windows.Forms.Button buttonlogoutme;
     }
 }

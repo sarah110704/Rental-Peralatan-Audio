@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -111,11 +111,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="view\FormAdminDashboard.cs">
+    <Compile Include="view\FormDashboardAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FormAdminDashboard.Designer.cs">
-      <DependentUpon>FormAdminDashboard.cs</DependentUpon>
+    <Compile Include="view\FormDashboardAdmin.Designer.cs">
+      <DependentUpon>FormDashboardAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="view\FormCustomerDashboard.cs">
       <SubType>Form</SubType>
@@ -131,11 +131,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\FormPenyewaan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FormPenyewaan.Designer.cs">
+      <DependentUpon>FormPenyewaan.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FormRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view\FormRegister.Designer.cs">
       <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\ManajemenEquipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ManajemenEquipment.Designer.cs">
+      <DependentUpon>ManajemenEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\ManajemenRental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ManajemenRental.Designer.cs">
+      <DependentUpon>ManajemenRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\ManajemenUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ManajemenUser.Designer.cs">
+      <DependentUpon>ManajemenUser.cs</DependentUpon>
     </Compile>
     <Compile Include="view\startUp.cs">
       <SubType>Form</SubType>
@@ -143,6 +167,9 @@
     <Compile Include="view\startUp.Designer.cs">
       <DependentUpon>startUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\FormDashboardAdmin.resx">
+      <DependentUpon>FormDashboardAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\FormCustomerDashboard.resx">
       <DependentUpon>FormCustomerDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,8 +181,20 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="view\FormPenyewaan.resx">
+      <DependentUpon>FormPenyewaan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\ManajemenEquipment.resx">
+      <DependentUpon>ManajemenEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\ManajemenRental.resx">
+      <DependentUpon>ManajemenRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\ManajemenUser.resx">
+      <DependentUpon>ManajemenUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\startUp.resx">
       <DependentUpon>startUp.cs</DependentUpon>
@@ -185,6 +224,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="view\Assets\30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
