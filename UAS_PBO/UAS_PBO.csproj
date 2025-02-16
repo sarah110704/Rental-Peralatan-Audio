@@ -213,6 +213,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="db\" />
+    <Folder Include="view\Assets\equipment\" />
+    <Folder Include="view\icon\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="view\Assets\account_circle.png" />

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegister));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -52,9 +53,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.epWarning = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epWrong = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epCorrect = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epWrong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCorrect)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -301,6 +308,21 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "Confirm Password*";
             // 
+            // epWarning
+            // 
+            this.epWarning.ContainerControl = this;
+            this.epWarning.Icon = ((System.Drawing.Icon)(resources.GetObject("epWarning.Icon")));
+            // 
+            // epWrong
+            // 
+            this.epWrong.ContainerControl = this;
+            this.epWrong.Icon = ((System.Drawing.Icon)(resources.GetObject("epWrong.Icon")));
+            // 
+            // epCorrect
+            // 
+            this.epCorrect.ContainerControl = this;
+            this.epCorrect.Icon = ((System.Drawing.Icon)(resources.GetObject("epCorrect.Icon")));
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,6 +359,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epWarning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epWrong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCorrect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +392,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ErrorProvider epWarning;
+        private System.Windows.Forms.ErrorProvider epWrong;
+        private System.Windows.Forms.ErrorProvider epCorrect;
     }
 }

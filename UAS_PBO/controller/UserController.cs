@@ -24,6 +24,30 @@ namespace UAS_PBO.controller
             }
         }
 
+        public bool IsUsernameExists(string username)
+        {
+            try
+            {
+                koneksi.OpenConnection();
+                var result = koneksi.reader("SELECT COUNT(*) FROM Users WHERE username = '" + username + "'");
+
+                if (result.Read() && Convert.ToInt32(result[0]) > 0)
+                {
+                    return true; 
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                koneksi.CloseConnection();
+            }
+
+            return false; 
+        }
+
         public bool Register(M_User user)
         {
             bool status = false;
