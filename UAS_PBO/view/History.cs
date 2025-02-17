@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace UAS_PBO.view
 {
-    public partial class FormPenyewaan : Form
+    public partial class History : Form
     {
-        public FormPenyewaan()
+        public History()
         {
             InitializeComponent();
-        }
-
-        private void dataGridViewPenyewaan_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

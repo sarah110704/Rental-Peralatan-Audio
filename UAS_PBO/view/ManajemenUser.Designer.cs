@@ -39,6 +39,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tbHashedPassword = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.cbRole = new System.Windows.Forms.ComboBox();
+            this.cbGender = new System.Windows.Forms.ComboBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.tbID = new System.Windows.Forms.TextBox();
             this.dgUser = new System.Windows.Forms.DataGridView();
             this.tbPhoneNumber = new System.Windows.Forms.TextBox();
             this.tbSearch = new System.Windows.Forms.TextBox();
@@ -50,12 +56,6 @@
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbID = new System.Windows.Forms.TextBox();
-            this.tbLastName = new System.Windows.Forms.TextBox();
-            this.cbGender = new System.Windows.Forms.ComboBox();
-            this.cbRole = new System.Windows.Forms.ComboBox();
-            this.tbPassword = new System.Windows.Forms.TextBox();
-            this.tbHashedPassword = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,8 +71,9 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(137, 450);
+            this.panel1.Size = new System.Drawing.Size(206, 692);
             this.panel1.TabIndex = 1;
             // 
             // panel4
@@ -86,8 +87,9 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(137, 450);
+            this.panel4.Size = new System.Drawing.Size(206, 692);
             this.panel4.TabIndex = 5;
             // 
             // buttonlogoutmu
@@ -95,9 +97,10 @@
             this.buttonlogoutmu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
             this.buttonlogoutmu.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonlogoutmu.ForeColor = System.Drawing.Color.White;
-            this.buttonlogoutmu.Location = new System.Drawing.Point(0, 398);
+            this.buttonlogoutmu.Location = new System.Drawing.Point(0, 612);
+            this.buttonlogoutmu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonlogoutmu.Name = "buttonlogoutmu";
-            this.buttonlogoutmu.Size = new System.Drawing.Size(138, 54);
+            this.buttonlogoutmu.Size = new System.Drawing.Size(207, 83);
             this.buttonlogoutmu.TabIndex = 4;
             this.buttonlogoutmu.Text = "LOGOUT";
             this.buttonlogoutmu.UseVisualStyleBackColor = false;
@@ -108,9 +111,10 @@
             this.buttonmanajemenrental.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonmanajemenrental.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonmanajemenrental.ForeColor = System.Drawing.Color.White;
-            this.buttonmanajemenrental.Location = new System.Drawing.Point(-10, 131);
+            this.buttonmanajemenrental.Location = new System.Drawing.Point(-15, 92);
+            this.buttonmanajemenrental.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonmanajemenrental.Name = "buttonmanajemenrental";
-            this.buttonmanajemenrental.Size = new System.Drawing.Size(156, 27);
+            this.buttonmanajemenrental.Size = new System.Drawing.Size(234, 42);
             this.buttonmanajemenrental.TabIndex = 3;
             this.buttonmanajemenrental.Text = "Manajemen Rental";
             this.buttonmanajemenrental.UseVisualStyleBackColor = true;
@@ -121,9 +125,10 @@
             this.buttonmanajemenequipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonmanajemenequipment.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonmanajemenequipment.ForeColor = System.Drawing.Color.White;
-            this.buttonmanajemenequipment.Location = new System.Drawing.Point(-10, 171);
+            this.buttonmanajemenequipment.Location = new System.Drawing.Point(-15, 139);
+            this.buttonmanajemenequipment.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonmanajemenequipment.Name = "buttonmanajemenequipment";
-            this.buttonmanajemenequipment.Size = new System.Drawing.Size(156, 27);
+            this.buttonmanajemenequipment.Size = new System.Drawing.Size(234, 42);
             this.buttonmanajemenequipment.TabIndex = 2;
             this.buttonmanajemenequipment.Text = "Manajemen Equipment";
             this.buttonmanajemenequipment.UseVisualStyleBackColor = true;
@@ -134,9 +139,10 @@
             this.buttonmanajemenuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonmanajemenuser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonmanajemenuser.ForeColor = System.Drawing.Color.White;
-            this.buttonmanajemenuser.Location = new System.Drawing.Point(-10, 89);
+            this.buttonmanajemenuser.Location = new System.Drawing.Point(-15, 46);
+            this.buttonmanajemenuser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonmanajemenuser.Name = "buttonmanajemenuser";
-            this.buttonmanajemenuser.Size = new System.Drawing.Size(156, 27);
+            this.buttonmanajemenuser.Size = new System.Drawing.Size(234, 42);
             this.buttonmanajemenuser.TabIndex = 1;
             this.buttonmanajemenuser.Text = "Manajemen User";
             this.buttonmanajemenuser.UseVisualStyleBackColor = true;
@@ -147,9 +153,10 @@
             this.buttondashboardadmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttondashboardadmin.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttondashboardadmin.ForeColor = System.Drawing.Color.White;
-            this.buttondashboardadmin.Location = new System.Drawing.Point(-10, 49);
+            this.buttondashboardadmin.Location = new System.Drawing.Point(-15, 0);
+            this.buttondashboardadmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttondashboardadmin.Name = "buttondashboardadmin";
-            this.buttondashboardadmin.Size = new System.Drawing.Size(156, 27);
+            this.buttondashboardadmin.Size = new System.Drawing.Size(234, 42);
             this.buttondashboardadmin.TabIndex = 0;
             this.buttondashboardadmin.Text = "Dashboard Admin";
             this.buttondashboardadmin.UseVisualStyleBackColor = true;
@@ -160,9 +167,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(-14, 64);
+            this.button1.Location = new System.Drawing.Point(-21, 98);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 27);
+            this.button1.Size = new System.Drawing.Size(234, 42);
             this.button1.TabIndex = 0;
             this.button1.Text = "Dashboard";
             this.button1.UseVisualStyleBackColor = true;
@@ -172,9 +180,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
             this.panel2.Controls.Add(this.button2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(137, 0);
+            this.panel2.Location = new System.Drawing.Point(206, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(663, 49);
+            this.panel2.Size = new System.Drawing.Size(994, 75);
             this.panel2.TabIndex = 2;
             // 
             // button2
@@ -183,9 +192,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(67, 10);
+            this.button2.Location = new System.Drawing.Point(100, 15);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 37);
+            this.button2.Size = new System.Drawing.Size(210, 57);
             this.button2.TabIndex = 1;
             this.button2.Text = "Manajemen User";
             this.button2.UseVisualStyleBackColor = true;
@@ -211,17 +221,91 @@
             this.panel3.Controls.Add(this.tbUsername);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(137, 49);
+            this.panel3.Location = new System.Drawing.Point(206, 75);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(663, 401);
+            this.panel3.Size = new System.Drawing.Size(994, 617);
             this.panel3.TabIndex = 3;
+            // 
+            // tbHashedPassword
+            // 
+            this.tbHashedPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbHashedPassword.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tbHashedPassword.Location = new System.Drawing.Point(615, 45);
+            this.tbHashedPassword.Multiline = true;
+            this.tbHashedPassword.Name = "tbHashedPassword";
+            this.tbHashedPassword.ReadOnly = true;
+            this.tbHashedPassword.Size = new System.Drawing.Size(331, 35);
+            this.tbHashedPassword.TabIndex = 26;
+            this.tbHashedPassword.Text = "Hashed Password";
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbPassword.Location = new System.Drawing.Point(336, 45);
+            this.tbPassword.Multiline = true;
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(246, 35);
+            this.tbPassword.TabIndex = 25;
+            this.tbPassword.Text = "Password";
+            // 
+            // cbRole
+            // 
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.Items.AddRange(new object[] {
+            "Customer",
+            "Admin"});
+            this.cbRole.Location = new System.Drawing.Point(333, 265);
+            this.cbRole.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(248, 28);
+            this.cbRole.TabIndex = 24;
+            // 
+            // cbGender
+            // 
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "Pria",
+            "Wanita"});
+            this.cbGender.Location = new System.Drawing.Point(333, 197);
+            this.cbGender.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(248, 28);
+            this.cbGender.TabIndex = 23;
+            // 
+            // tbLastName
+            // 
+            this.tbLastName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbLastName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbLastName.Location = new System.Drawing.Point(333, 126);
+            this.tbLastName.Multiline = true;
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(248, 39);
+            this.tbLastName.TabIndex = 22;
+            this.tbLastName.Text = "LastName";
+            // 
+            // tbID
+            // 
+            this.tbID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tbID.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tbID.Location = new System.Drawing.Point(44, 45);
+            this.tbID.Multiline = true;
+            this.tbID.Name = "tbID";
+            this.tbID.ReadOnly = true;
+            this.tbID.Size = new System.Drawing.Size(54, 35);
+            this.tbID.TabIndex = 21;
+            this.tbID.Text = "ID";
+            this.tbID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgUser
             // 
             this.dgUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUser.Location = new System.Drawing.Point(29, 206);
+            this.dgUser.Location = new System.Drawing.Point(44, 317);
+            this.dgUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgUser.Name = "dgUser";
-            this.dgUser.Size = new System.Drawing.Size(608, 169);
+            this.dgUser.RowHeadersWidth = 62;
+            this.dgUser.Size = new System.Drawing.Size(912, 260);
             this.dgUser.TabIndex = 20;
             this.dgUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUser_CellClick);
             // 
@@ -229,11 +313,10 @@
             // 
             this.tbPhoneNumber.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbPhoneNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbPhoneNumber.Location = new System.Drawing.Point(29, 172);
-            this.tbPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPhoneNumber.Location = new System.Drawing.Point(44, 265);
             this.tbPhoneNumber.Multiline = true;
             this.tbPhoneNumber.Name = "tbPhoneNumber";
-            this.tbPhoneNumber.Size = new System.Drawing.Size(173, 27);
+            this.tbPhoneNumber.Size = new System.Drawing.Size(258, 39);
             this.tbPhoneNumber.TabIndex = 19;
             this.tbPhoneNumber.Text = "Phone Number";
             // 
@@ -241,11 +324,10 @@
             // 
             this.tbSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbSearch.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbSearch.Location = new System.Drawing.Point(410, 169);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSearch.Location = new System.Drawing.Point(615, 260);
             this.tbSearch.Multiline = true;
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(222, 24);
+            this.tbSearch.Size = new System.Drawing.Size(331, 35);
             this.tbSearch.TabIndex = 18;
             this.tbSearch.Text = "Search";
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
@@ -254,19 +336,19 @@
             // 
             this.tbAddress.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbAddress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbAddress.Location = new System.Drawing.Point(29, 126);
-            this.tbAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAddress.Location = new System.Drawing.Point(44, 194);
             this.tbAddress.Multiline = true;
             this.tbAddress.Name = "tbAddress";
-            this.tbAddress.Size = new System.Drawing.Size(173, 27);
+            this.tbAddress.Size = new System.Drawing.Size(258, 39);
             this.tbAddress.TabIndex = 16;
             this.tbAddress.Text = "Address";
             // 
             // btnHapus
             // 
-            this.btnHapus.Location = new System.Drawing.Point(410, 126);
+            this.btnHapus.Location = new System.Drawing.Point(615, 194);
+            this.btnHapus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(99, 27);
+            this.btnHapus.Size = new System.Drawing.Size(148, 42);
             this.btnHapus.TabIndex = 13;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = true;
@@ -274,9 +356,10 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(533, 126);
+            this.btnRefresh.Location = new System.Drawing.Point(800, 194);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(99, 27);
+            this.btnRefresh.Size = new System.Drawing.Size(148, 42);
             this.btnRefresh.TabIndex = 12;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -284,9 +367,10 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(533, 81);
+            this.btnEdit.Location = new System.Drawing.Point(800, 125);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(99, 28);
+            this.btnEdit.Size = new System.Drawing.Size(148, 43);
             this.btnEdit.TabIndex = 11;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -294,9 +378,10 @@
             // 
             // btnSimpan
             // 
-            this.btnSimpan.Location = new System.Drawing.Point(410, 81);
+            this.btnSimpan.Location = new System.Drawing.Point(615, 125);
+            this.btnSimpan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSimpan.Name = "btnSimpan";
-            this.btnSimpan.Size = new System.Drawing.Size(99, 28);
+            this.btnSimpan.Size = new System.Drawing.Size(148, 43);
             this.btnSimpan.TabIndex = 10;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = true;
@@ -306,11 +391,10 @@
             // 
             this.tbFirstName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbFirstName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbFirstName.Location = new System.Drawing.Point(29, 82);
-            this.tbFirstName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbFirstName.Location = new System.Drawing.Point(44, 126);
             this.tbFirstName.Multiline = true;
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(173, 27);
+            this.tbFirstName.Size = new System.Drawing.Size(258, 39);
             this.tbFirstName.TabIndex = 9;
             this.tbFirstName.Text = "FirstName";
             // 
@@ -318,103 +402,31 @@
             // 
             this.tbUsername.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbUsername.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbUsername.Location = new System.Drawing.Point(79, 29);
-            this.tbUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.tbUsername.Location = new System.Drawing.Point(118, 45);
             this.tbUsername.Multiline = true;
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(123, 24);
+            this.tbUsername.Size = new System.Drawing.Size(182, 35);
             this.tbUsername.TabIndex = 8;
             this.tbUsername.Text = "Username";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(202, 29);
+            this.label1.Location = new System.Drawing.Point(303, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 1;
-            // 
-            // tbID
-            // 
-            this.tbID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbID.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbID.Location = new System.Drawing.Point(29, 29);
-            this.tbID.Margin = new System.Windows.Forms.Padding(2);
-            this.tbID.Multiline = true;
-            this.tbID.Name = "tbID";
-            this.tbID.ReadOnly = true;
-            this.tbID.Size = new System.Drawing.Size(37, 24);
-            this.tbID.TabIndex = 21;
-            this.tbID.Text = "ID";
-            this.tbID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbLastName
-            // 
-            this.tbLastName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbLastName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbLastName.Location = new System.Drawing.Point(222, 82);
-            this.tbLastName.Margin = new System.Windows.Forms.Padding(2);
-            this.tbLastName.Multiline = true;
-            this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(167, 27);
-            this.tbLastName.TabIndex = 22;
-            this.tbLastName.Text = "LastName";
-            // 
-            // cbGender
-            // 
-            this.cbGender.FormattingEnabled = true;
-            this.cbGender.Items.AddRange(new object[] {
-            "Pria",
-            "Wanita"});
-            this.cbGender.Location = new System.Drawing.Point(222, 128);
-            this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(167, 21);
-            this.cbGender.TabIndex = 23;
-            // 
-            // cbRole
-            // 
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.Items.AddRange(new object[] {
-            "Customer",
-            "Admin"});
-            this.cbRole.Location = new System.Drawing.Point(222, 172);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(167, 21);
-            this.cbRole.TabIndex = 24;
-            // 
-            // tbPassword
-            // 
-            this.tbPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbPassword.Location = new System.Drawing.Point(224, 29);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.tbPassword.Multiline = true;
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(165, 24);
-            this.tbPassword.TabIndex = 25;
-            this.tbPassword.Text = "Password";
-            // 
-            // tbHashedPassword
-            // 
-            this.tbHashedPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbHashedPassword.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbHashedPassword.Location = new System.Drawing.Point(410, 29);
-            this.tbHashedPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.tbHashedPassword.Multiline = true;
-            this.tbHashedPassword.Name = "tbHashedPassword";
-            this.tbHashedPassword.ReadOnly = true;
-            this.tbHashedPassword.Size = new System.Drawing.Size(222, 24);
-            this.tbHashedPassword.TabIndex = 26;
-            this.tbHashedPassword.Text = "Hashed Password";
             // 
             // ManajemenUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ManajemenUser";
             this.Text = "ManajemenUser";
             this.panel1.ResumeLayout(false);

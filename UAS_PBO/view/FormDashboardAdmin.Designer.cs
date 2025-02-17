@@ -37,12 +37,10 @@
             this.bttnDashboardadmin = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +92,7 @@
             this.bttnManajemenrental.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnManajemenrental.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnManajemenrental.ForeColor = System.Drawing.Color.White;
-            this.bttnManajemenrental.Location = new System.Drawing.Point(-15, 202);
+            this.bttnManajemenrental.Location = new System.Drawing.Point(-15, 104);
             this.bttnManajemenrental.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bttnManajemenrental.Name = "bttnManajemenrental";
             this.bttnManajemenrental.Size = new System.Drawing.Size(234, 42);
@@ -108,7 +106,7 @@
             this.bttnManajemenequipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnManajemenequipment.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnManajemenequipment.ForeColor = System.Drawing.Color.White;
-            this.bttnManajemenequipment.Location = new System.Drawing.Point(-15, 263);
+            this.bttnManajemenequipment.Location = new System.Drawing.Point(-15, 156);
             this.bttnManajemenequipment.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bttnManajemenequipment.Name = "bttnManajemenequipment";
             this.bttnManajemenequipment.Size = new System.Drawing.Size(234, 42);
@@ -122,7 +120,7 @@
             this.bttnManajemenuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnManajemenuser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnManajemenuser.ForeColor = System.Drawing.Color.White;
-            this.bttnManajemenuser.Location = new System.Drawing.Point(-15, 137);
+            this.bttnManajemenuser.Location = new System.Drawing.Point(-15, 52);
             this.bttnManajemenuser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bttnManajemenuser.Name = "bttnManajemenuser";
             this.bttnManajemenuser.Size = new System.Drawing.Size(234, 42);
@@ -133,17 +131,18 @@
             // 
             // bttnDashboardadmin
             // 
+            this.bttnDashboardadmin.BackColor = System.Drawing.Color.DarkBlue;
             this.bttnDashboardadmin.FlatAppearance.BorderSize = 0;
             this.bttnDashboardadmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnDashboardadmin.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnDashboardadmin.ForeColor = System.Drawing.Color.White;
-            this.bttnDashboardadmin.Location = new System.Drawing.Point(-15, 75);
+            this.bttnDashboardadmin.Location = new System.Drawing.Point(-15, 0);
             this.bttnDashboardadmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bttnDashboardadmin.Name = "bttnDashboardadmin";
             this.bttnDashboardadmin.Size = new System.Drawing.Size(234, 42);
             this.bttnDashboardadmin.TabIndex = 0;
             this.bttnDashboardadmin.Text = "Dashboard Admin";
-            this.bttnDashboardadmin.UseVisualStyleBackColor = true;
+            this.bttnDashboardadmin.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -162,27 +161,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.panel2.Controls.Add(this.button2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(206, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(994, 75);
             this.panel2.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(80, 25);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 42);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Dashboard Admin";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -221,7 +205,6 @@
             this.Load += new System.EventHandler(this.FormAdminDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -234,7 +217,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button bttnManajemenrental;

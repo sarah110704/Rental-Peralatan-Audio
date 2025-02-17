@@ -43,9 +43,6 @@ namespace UAS_PBO.controller
                 // Loop untuk menyimpan setiap item ke tabel rental_detail
                 foreach (var detail in rentalDetails)
                 {
-
-
-                    // Insert rentaldetail jika EquipmentID valid
                     string rentalDetailQuery = $"INSERT INTO rentaldetail (RentalID, EquipmentID, Quantity, PricePerDay, TotalPrice) " +
                                                $"VALUES ('{rentalID}', '{detail.EquipmentID}', '{detail.Quantity}', '{detail.PricePerDay}', '{detail.TotalPrice}')";
 
@@ -77,21 +74,26 @@ namespace UAS_PBO.controller
             try
             {
                 koneksi.OpenConnection();
-                string query = "SELECT * FROM rental";
+                string query = "SELECT r.*, u.Username FROM rental r JOIN users u ON r.UserID = u.Id";
                 var result = koneksi.reader(query);
 
                 while (result.Read())
                 {
-                    M_Rental rental = new M_Rental
+                    decimal totalPrice = 0;
+                    string totalPriceString = result["TotalPrice"].ToString();
+
+                    // **Cek apakah totalPrice memiliki format mata uang atau simbol lain**
+                    decimal.TryParse(totalPriceString.Replace("Rp", "").Replace(",", "").Trim(), out totalPrice);
+
+                    rentalList.Add(new M_Rental
                     {
                         RentalID = Convert.ToInt32(result["RentalID"]),
-                        UserID = Convert.ToInt32(result["UserID"]),
-                        RentalDate = Convert.ToDateTime(result["RentalDate"]),
-                        ReturnDate = Convert.ToDateTime(result["ReturnDate"]),
-                        TotalPrice = Convert.ToDecimal(result["TotalPrice"]),
+                        UserName = result["Username"].ToString(),
+                        RentalDate = result["RentalDate"] != DBNull.Value ? Convert.ToDateTime(result["RentalDate"]) : DateTime.MinValue,
+                        ReturnDate = result["ReturnDate"] != DBNull.Value ? Convert.ToDateTime(result["ReturnDate"]) : DateTime.MinValue,
+                        TotalPrice = totalPrice,
                         Status = result["Status"].ToString()
-                    };
-                    rentalList.Add(rental);
+                    });
                 }
                 result.Close();
             }
@@ -105,6 +107,8 @@ namespace UAS_PBO.controller
             }
             return rentalList;
         }
+
+
 
         // ✅ Mengambil Detail Penyewaan berdasarkan RentalID
         public List<M_RentalDetail> GetRentalDetails(int rentalID)
@@ -142,7 +146,7 @@ namespace UAS_PBO.controller
             return detailList;
         }
 
-        // ✅ Mengupdate Status Penyewaan
+        //update Status Penyewaan
         public bool UpdateRentalStatus(int rentalID, string newStatus)
         {
             bool status = false;
@@ -165,7 +169,7 @@ namespace UAS_PBO.controller
             return status;
         }
 
-        // ✅ Menghapus Penyewaan (Hanya jika status "Cancelled")
+        //Menghapus Penyewaan (Hanya jika status "Cancelled")
         public bool DeleteRental(int rentalID)
         {
             bool status = false;
@@ -210,6 +214,43 @@ namespace UAS_PBO.controller
                 koneksi.CloseConnection();
             }
             return status;
+        }
+
+        // ✅ 🔍 **Search Rental berdasarkan UserName, RentalDate, atau Status**
+        public List<M_Rental> SearchRental(string keyword)
+        {
+            List<M_Rental> rentalList = new List<M_Rental>();
+            try
+            {
+                koneksi.OpenConnection();
+                string query = $"SELECT rental.*, users.Username FROM rental " +
+                               $"JOIN users ON rental.UserID = users.Id " +
+                               $"WHERE users.Username LIKE '%{keyword}%' " +
+                               $"OR rental.RentalDate LIKE '%{keyword}%' " +
+                               $"OR rental.Status LIKE '%{keyword}%'";
+
+                var result = koneksi.reader(query);
+
+                while (result.Read())
+                {
+                    rentalList.Add(new M_Rental
+                    {
+                        RentalID = Convert.ToInt32(result["RentalID"]),
+                        UserID = Convert.ToInt32(result["UserID"]),
+                        UserName = result["Username"].ToString(),
+                        RentalDate = Convert.ToDateTime(result["RentalDate"]),
+                        ReturnDate = Convert.ToDateTime(result["ReturnDate"]),
+                        TotalPrice = Convert.ToDecimal(result["TotalPrice"]),
+                        Status = result["Status"].ToString()
+                    });
+                }
+                result.Close();
+            }
+            finally
+            {
+                koneksi.CloseConnection();
+            }
+            return rentalList;
         }
     }
 }
