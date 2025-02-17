@@ -15,7 +15,7 @@ namespace UAS_PBO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormCustomerDashboard());
+            Application.Run(new FormLogin());
         }
     }
 }

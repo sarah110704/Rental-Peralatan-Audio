@@ -1,30 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UAS_PBO.model
 {
     public class M_Rental
     {
-        public string EquipmentName { get; set; }
-        public int Quantity { get; set; }
-        public decimal PricePerDay { get; set; }
-        public decimal TotalPrice { get; set; }
-        public DateTime RentalStart { get; set; }
-        public DateTime RentalEnd { get; set; }
+        private int rentalID;
+        private int userID;
+        private DateTime rentalDate;
+        private DateTime returnDate;
+        private decimal totalPrice;
+        private string status;
 
         public M_Rental() { }
 
-        public M_Rental(string equipmentName, int quantity, decimal pricePerDay, decimal totalPrice, DateTime rentalStart, DateTime rentalEnd)
+        public M_Rental(int rentalID, int userID, DateTime rentalDate, DateTime returnDate, decimal totalPrice, string status)
         {
-            EquipmentName = equipmentName;
-            Quantity = quantity;
-            PricePerDay = pricePerDay;
-            TotalPrice = totalPrice;
-            RentalStart = rentalStart;
-            RentalEnd = rentalEnd;
+            this.RentalID = rentalID;
+            this.UserID = userID;
+            this.RentalDate = rentalDate;
+            this.ReturnDate = returnDate;
+            this.TotalPrice = totalPrice;
+            this.Status = status;
         }
+
+        public int RentalID { get => rentalID; set => rentalID = value; }
+        public int UserID { get => userID; set => userID = value; }
+        public DateTime RentalDate { get => rentalDate; set => rentalDate = value; }
+        public DateTime ReturnDate { get => returnDate; set => returnDate = value; }
+        public decimal TotalPrice { get => totalPrice; set => totalPrice = value; }
+        public string Status { get => status; set => status = value; }
     }
 }

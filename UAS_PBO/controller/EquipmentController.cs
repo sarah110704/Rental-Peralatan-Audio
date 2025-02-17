@@ -154,10 +154,9 @@ namespace UAS_PBO.controller
             {
                 koneksi.CloseConnection();
             }
+         
             return equipmentList;
         }
-
-        // ✅ Method untuk mengecek apakah equipment dengan nama tertentu sudah ada
         public bool IsEquipmentExists(string name)
         {
             try

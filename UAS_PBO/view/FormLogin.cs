@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Management.Instrumentation;
 using System.Windows.Forms;
 using UAS_PBO.view;
+using UAS_PBO.utils;
 
 namespace UAS_PBO
 {
@@ -11,7 +11,6 @@ namespace UAS_PBO
         {
             InitializeComponent();
         }
-
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -28,34 +27,36 @@ namespace UAS_PBO
                 return;
             }
 
-                controller.UserController userController = new controller.UserController();
-                model.M_User user = userController.Login(tbUsername.Text, tbPassword.Text);
+            controller.UserController userController = new controller.UserController();
+            model.M_User user = userController.Login(tbUsername.Text, tbPassword.Text);
 
-                if (user != null)
+            if (user != null)
+            {
+                
+                SessionManager.UserID = int.Parse(user.Id);
+                SessionManager.Username = user.Username;
+                SessionManager.Role = user.Role;
+
+                MessageBox.Show($"Login berhasil! Selamat datang {user.FirstName}.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                
+                if (user.Role == "Admin")
                 {
-                    MessageBox.Show($"Login berhasil! Selamat datang {user.FirstName}.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    if (user.Role == "Admin")
-                    {
-                        FormDashboardAdmin adminDashboard = new FormDashboardAdmin();
-                        adminDashboard.Show();
-                    }
-                    else
-                    {
-                        FormCustomerDashboard customerDashboard = new FormCustomerDashboard();
-                        customerDashboard.Show();
-                    }
-
-                    this.Hide(); 
+                    ManajemenEquipment equipment = new ManajemenEquipment();
+                    equipment.Show();
                 }
-
                 else
                 {
-                    MessageBox.Show("Username atau Password salah!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    FormCustomerDashboard customerDashboard = new FormCustomerDashboard();
+                    customerDashboard.Show();
                 }
 
-
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Username atau Password salah!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
-

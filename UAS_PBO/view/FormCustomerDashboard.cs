@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using UAS_PBO.controller;
 using UAS_PBO.model;
+using UAS_PBO.utils;
 
 namespace UAS_PBO.view
 {
     public partial class FormCustomerDashboard : Form
     {
+        private RentalController rentalController = new RentalController();
+        private EquipmentController equipmentController = new EquipmentController();
+
         public FormCustomerDashboard()
         {
             InitializeComponent();
@@ -16,10 +21,12 @@ namespace UAS_PBO.view
             GenerateEquipmentCards();
         }
 
+        // ✅ Inisialisasi DataGrid untuk List Barang yang Dipilih
         private void InitializeDataGrid()
         {
             dgCart.Columns.Clear();
 
+            dgCart.Columns.Add("equipmentID", "ID");
             dgCart.Columns.Add("equipmentName", "Nama Barang");
             dgCart.Columns.Add("category", "Kategori");
             dgCart.Columns.Add("brand", "Brand");
@@ -27,6 +34,7 @@ namespace UAS_PBO.view
             dgCart.Columns.Add("pricePerDay", "Harga Sewa / Hari");
             dgCart.Columns.Add("totalPrice", "Total Harga");
 
+            dgCart.Columns["equipmentID"].Visible = false; // Sembunyikan ID untuk keperluan internal
             dgCart.Columns["equipmentName"].ReadOnly = true;
             dgCart.Columns["category"].ReadOnly = true;
             dgCart.Columns["brand"].ReadOnly = true;
@@ -34,22 +42,19 @@ namespace UAS_PBO.view
             dgCart.Columns["totalPrice"].ReadOnly = true;
         }
 
+        // ✅ Menampilkan Kartu Equipment dari Database
         private void GenerateEquipmentCards()
         {
             flowLayoutPanel1.Controls.Clear();
 
-            List<Equipment> equipmentList = new List<Equipment>
-            {
-                new Equipment { Name="Yamaha DXR12", Category="Speaker", Brand="Yamaha", Stock=5, RentalPrice=250000, Status="Tersedia", Description="Speaker aktif 12 inch", ImagePath="Images/speaker.jpg" },
-                new Equipment { Name="Shure SM58", Category="Microphone", Brand="Shure", Stock=10, RentalPrice=50000, Status="Tersedia", Description="Microphone vocal dynamic", ImagePath="Images/microphone.jpg" }
-            };
+            List<Equipment> equipmentList = equipmentController.GetAllEquipment(); // Ambil dari database
 
             foreach (var eq in equipmentList)
             {
                 Panel equipmentPanel = new Panel
                 {
                     Width = 250,
-                    Height = 310,
+                    Height = 350,
                     BorderStyle = BorderStyle.FixedSingle,
                     Padding = new Padding(5)
                 };
@@ -69,7 +74,7 @@ namespace UAS_PBO.view
                     Text = eq.Name,
                     Font = new Font("Arial", 10, FontStyle.Bold),
                     AutoSize = true,
-                    Top = 130,
+                    Top = 170,
                     Left = 5
                 };
 
@@ -78,7 +83,7 @@ namespace UAS_PBO.view
                     Text = $"Kategori: {eq.Category} | Brand: {eq.Brand}",
                     Font = new Font("Arial", 8),
                     AutoSize = true,
-                    Top = 150,
+                    Top = 190,
                     Left = 5
                 };
 
@@ -87,7 +92,7 @@ namespace UAS_PBO.view
                     Text = $"Stok: {eq.Stock} | Status: {eq.Status}",
                     Font = new Font("Arial", 8),
                     AutoSize = true,
-                    Top = 170,
+                    Top = 210,
                     Left = 5,
                     ForeColor = eq.Status == "Tersedia" ? Color.Green : Color.Red
                 };
@@ -97,7 +102,7 @@ namespace UAS_PBO.view
                     Text = eq.Description,
                     Font = new Font("Arial", 8),
                     AutoSize = true,
-                    Top = 190,
+                    Top = 230,
                     Left = 5
                 };
 
@@ -107,7 +112,7 @@ namespace UAS_PBO.view
                     Font = new Font("Arial", 9),
                     AutoSize = true,
                     ForeColor = Color.Green,
-                    Top = 210,
+                    Top = 250,
                     Left = 5
                 };
 
@@ -117,7 +122,7 @@ namespace UAS_PBO.view
                     Maximum = eq.Stock,
                     Value = 1,
                     Width = 60,
-                    Top = 235,
+                    Top = 275,
                     Left = 5
                 };
 
@@ -127,7 +132,7 @@ namespace UAS_PBO.view
                     BackColor = Color.Blue,
                     ForeColor = Color.White,
                     Width = 230,
-                    Top = 270,
+                    Top = 310,
                     Left = 5
                 };
 
@@ -155,20 +160,9 @@ namespace UAS_PBO.view
             }
         }
 
+        // ✅ Menambahkan Equipment ke Keranjang
         private void AddToCart(Equipment eq, int qty)
         {
-            if (eq == null)
-            {
-                MessageBox.Show("Error: Data equipment tidak ditemukan!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (dgCart.Columns.Count == 0)
-            {
-                MessageBox.Show("Error: DataGridView belum diinisialisasi!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             foreach (DataGridViewRow row in dgCart.Rows)
             {
                 if (row.Cells["equipmentName"].Value != null && row.Cells["equipmentName"].Value.ToString() == eq.Name)
@@ -179,11 +173,12 @@ namespace UAS_PBO.view
             }
 
             decimal totalHarga = eq.RentalPrice * qty;
-            dgCart.Rows.Add(eq.Name, eq.Category, eq.Brand, qty, eq.RentalPrice.ToString("C"), totalHarga.ToString("C"));
+            MessageBox.Show($"Equipment ID: {eq.Id}");
+            dgCart.Rows.Add(eq.Id, eq.Name, eq.Category, eq.Brand, qty, eq.RentalPrice, totalHarga);
             UpdateTotalPrice();
         }
 
-
+        // ✅ Mengupdate Total Harga
         private void UpdateTotalPrice()
         {
             decimal total = 0;
@@ -191,7 +186,7 @@ namespace UAS_PBO.view
             {
                 if (row.Cells["totalPrice"].Value != null && row.Cells["equipmentName"].Value.ToString() != "Total")
                 {
-                    total += Convert.ToDecimal(row.Cells["totalPrice"].Value.ToString().Replace("Rp", "").Replace(",", "").Trim());
+                    total += Convert.ToDecimal(row.Cells["totalPrice"].Value);
                 }
             }
 
@@ -203,14 +198,21 @@ namespace UAS_PBO.view
                 }
             }
 
-            dgCart.Rows.Add("Total", "", "", "", "", total.ToString("C"));
+            dgCart.Rows.Add("Total", "", "", "", "", "", total.ToString("C"));
         }
 
+        // ✅ Menyimpan Data Penyewaan
         private void btnSewa_Click(object sender, EventArgs e)
         {
             if (dgCart.Rows.Count <= 1)
             {
                 MessageBox.Show("Keranjang masih kosong!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (SessionManager.UserID == -1)
+            {
+                MessageBox.Show("Anda belum login! Silakan login terlebih dahulu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -223,43 +225,47 @@ namespace UAS_PBO.view
                 return;
             }
 
-            List<M_Rental> rentalItems = new List<M_Rental>();
+            int userID = SessionManager.UserID; // Ambil UserID dari sesi login
+
+            decimal totalPrice = 0;
+            List<M_RentalDetail> rentalDetails = new List<M_RentalDetail>();
 
             foreach (DataGridViewRow row in dgCart.Rows)
             {
                 if (row.Cells[0].Value?.ToString() == "Total") continue;
 
-                rentalItems.Add(new M_Rental
+                rentalDetails.Add(new M_RentalDetail
                 {
-                    EquipmentName = row.Cells[0].Value.ToString(),
-                    Quantity = Convert.ToInt32(row.Cells[3].Value),
-                    PricePerDay = Convert.ToDecimal(row.Cells[4].Value.ToString().Replace("Rp", "").Replace(",", "").Trim()),
-                    TotalPrice = Convert.ToDecimal(row.Cells[5].Value.ToString().Replace("Rp", "").Replace(",", "").Trim()),
-                    RentalStart = startDate,
-                    RentalEnd = endDate
+                    EquipmentID = Convert.ToInt32(row.Cells["equipmentID"].Value),
+                    Quantity = Convert.ToInt32(row.Cells["quantity"].Value),
+                    PricePerDay = Convert.ToDecimal(row.Cells["pricePerDay"].Value),
+                    TotalPrice = Convert.ToDecimal(row.Cells["totalPrice"].Value)
                 });
+
+                totalPrice += Convert.ToDecimal(row.Cells["totalPrice"].Value);
             }
 
-            ShowRentalSummary(rentalItems);
+            M_Rental rental = new M_Rental
+            {
+                UserID = userID, 
+                RentalDate = startDate,
+                ReturnDate = endDate,
+                TotalPrice = totalPrice,
+                Status = "Ongoing"
+            };
+
+            bool success = rentalController.AddRental(rental, rentalDetails);
+            if (success)
+            {
+                MessageBox.Show("Penyewaan berhasil disimpan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearCart();
+            }
         }
 
-        private void ShowRentalSummary(List<M_Rental> rentalItems)
+
+        private void ClearCart()
         {
-            StringBuilder summary = new StringBuilder();
-            summary.AppendLine("📌 Ringkasan Penyewaan:\n");
-
-            foreach (var rental in rentalItems)
-            {
-                summary.AppendLine($"Equipment: {rental.EquipmentName}");
-                summary.AppendLine($"Jumlah: {rental.Quantity}");
-                summary.AppendLine($"Harga/Hari: {rental.PricePerDay:C}");
-                summary.AppendLine($"Tanggal Sewa: {rental.RentalStart:dd MMM yyyy}");
-                summary.AppendLine($"Tanggal Kembali: {rental.RentalEnd:dd MMM yyyy}");
-                summary.AppendLine($"Total Harga: {rental.TotalPrice:C}");
-                summary.AppendLine("-------------------------------------\n");
-            }
-
-            MessageBox.Show(summary.ToString(), "Detail Penyewaan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            dgCart.Rows.Clear();
         }
     }
 }

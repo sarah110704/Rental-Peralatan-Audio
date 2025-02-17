@@ -104,12 +104,14 @@
     <Compile Include="controller\UserController.cs" />
     <Compile Include="model\M_Equipment.cs" />
     <Compile Include="model\M_Rental.cs" />
+    <Compile Include="model\M_RentalDetail.cs" />
     <Compile Include="model\M_User.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="utils\SessionManager.cs" />
     <Compile Include="view\FormDashboardAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,7 +227,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="view\Assets\equipment\" />
     <Folder Include="view\icon\" />
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +237,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="db\UASPBO.sql" />
+    <Content Include="view\Assets\equipment\marshalljcm800.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
