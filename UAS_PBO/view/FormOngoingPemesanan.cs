@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UAS_PBO.controller;
 using UAS_PBO.model;
+using UAS_PBO.utils;
 
 namespace UAS_PBO.view
 {
     public partial class FormOngoingPemesanan : Form
     {
         private RentalController rentalController = new RentalController();
-        private int userID;  // ID User yang sedang login
+        private int userID; 
         public FormOngoingPemesanan()
         {
             InitializeComponent();
@@ -36,7 +37,22 @@ namespace UAS_PBO.view
             dgOngoing.Columns.Add("returnDate", "Tanggal Kembali");
             dgOngoing.Columns.Add("status", "Status");
 
+            int userID = SessionManager.UserID;
+            MessageBox.Show($"User ID saat ini: {userID}"); 
+
+            if (userID == 0)
+            {
+                MessageBox.Show("User belum login. Silakan login ulang!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             List<M_RentalOngoing> rentalList = rentalController.GetOngoingRentals(userID);
+
+            if (rentalList.Count == 0)
+            {
+                MessageBox.Show("Tidak ada penyewaan yang sedang berlangsung!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             foreach (var rental in rentalList)
             {
@@ -51,6 +67,7 @@ namespace UAS_PBO.view
                     rental.Status);
             }
         }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -74,6 +91,22 @@ namespace UAS_PBO.view
             {
                 LoadOngoingRentals();
             }
+        }
+
+        private void dgOngoing_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+            int rentalID = Convert.ToInt32(dgOngoing.Rows[e.RowIndex].Cells["rentalID"].Value);
+            string status = dgOngoing.Rows[e.RowIndex].Cells["status"].Value.ToString();
+            if (status == "Pending")
+            {
+                btnCancel.Enabled = true;
+            }
+            else
+            {
+                btnCancel.Enabled = false;
+            }
+
         }
     }
 }

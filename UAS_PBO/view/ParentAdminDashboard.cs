@@ -22,5 +22,31 @@ namespace UAS_PBO.view
         {
 
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ManajemenEquipment manajemenEquipment = new ManajemenEquipment();
+            manajemenEquipment.MdiParent = this;
+            manajemenEquipment.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            ManajemenRental manajemenRental = new ManajemenRental();
+            manajemenRental.MdiParent = this;
+            manajemenRental.Show();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            ManajemenUser manajemenUser = new ManajemenUser();
+            manajemenUser.MdiParent = this;
+            manajemenUser.Show();
+        }
     }
 }

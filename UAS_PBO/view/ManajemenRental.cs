@@ -276,5 +276,10 @@ namespace UAS_PBO.view
             formHistory.ShowDialog();
 
         }
+
+        private void buttnrfrsh_Click(object sender, EventArgs e)
+        {
+            LoadRentalData(); 
+        }
     }
 }

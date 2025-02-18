@@ -42,12 +42,12 @@ namespace UAS_PBO
                 
                 if (user.Role == "Admin")
                 {
-                    ManajemenEquipment equipment = new ManajemenEquipment();
-                    equipment.Show();
+                    ParentAdminDashboard adminDashboard = new ParentAdminDashboard();
+                    adminDashboard.Show();
                 }
                 else
                 {
-                    FormCustomerDashboard customerDashboard = new FormCustomerDashboard();
+                    ParentCustomerDahsboard customerDashboard = new ParentCustomerDahsboard();
                     customerDashboard.Show();
                 }
 

@@ -315,10 +315,15 @@ namespace UAS_PBO.controller
                                $"WHERE r.UserID = {userID} AND (r.Status = 'Pending' OR r.Status = 'Ongoing')";
 
                 var result = koneksi.reader(query);
+                if (!result.HasRows)
+                {
+                    MessageBox.Show("Tidak ada data penyewaan yang sedang berlangsung!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"User ID saat ini: {userID}");
+                }
 
                 while (result.Read())
                 {
-                    M_RentalOngoing rental = new M_RentalOngoing
+                    rentalList.Add(new M_RentalOngoing
                     {
                         RentalID = Convert.ToInt32(result["RentalID"]),
                         EquipmentName = result["EquipmentName"].ToString(),
@@ -328,8 +333,7 @@ namespace UAS_PBO.controller
                         RentalDate = Convert.ToDateTime(result["RentalDate"]),
                         ReturnDate = Convert.ToDateTime(result["ReturnDate"]),
                         Status = result["Status"].ToString()
-                    };
-                    rentalList.Add(rental);
+                    });
                 }
                 result.Close();
             }
@@ -343,6 +347,7 @@ namespace UAS_PBO.controller
             }
             return rentalList;
         }
+
 
         public bool CancelRental(int rentalID)
         {

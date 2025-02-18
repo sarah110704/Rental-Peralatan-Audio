@@ -118,9 +118,9 @@ namespace UAS_PBO.view
 
                 NumericUpDown quantityInput = new NumericUpDown
                 {
-                    Minimum = 1,
+                    Minimum = 0,
                     Maximum = eq.Stock,
-                    Value = 1,
+                    Value = 0,
                     Width = 60,
                     Top = 275,
                     Left = 5

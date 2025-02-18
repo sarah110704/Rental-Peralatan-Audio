@@ -16,5 +16,24 @@ namespace UAS_PBO.view
         {
             InitializeComponent();
         }
+
+        private void rentalSekarangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCustomerDashboard rent = new FormCustomerDashboard();
+            rent.MdiParent = this;
+            rent.Show();
+        }
+
+        private void onGoingRentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOngoingPemesanan onGoing = new FormOngoingPemesanan();
+            onGoing.MdiParent = this;
+            onGoing.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

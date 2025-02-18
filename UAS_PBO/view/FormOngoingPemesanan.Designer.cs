@@ -41,14 +41,15 @@
             this.dgOngoing.Name = "dgOngoing";
             this.dgOngoing.RowHeadersWidth = 62;
             this.dgOngoing.RowTemplate.Height = 28;
-            this.dgOngoing.Size = new System.Drawing.Size(929, 526);
+            this.dgOngoing.Size = new System.Drawing.Size(1055, 667);
             this.dgOngoing.TabIndex = 0;
+            this.dgOngoing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgOngoing_CellClick);
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Firebrick;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancel.Location = new System.Drawing.Point(781, 613);
+            this.btnCancel.Location = new System.Drawing.Point(907, 739);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(166, 45);
             this.btnCancel.TabIndex = 1;
@@ -70,7 +71,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 679);
+            this.ClientSize = new System.Drawing.Size(1104, 811);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dgOngoing);

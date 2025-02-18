@@ -134,12 +134,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="utils\SessionManager.cs" />
-    <Compile Include="view\FormDashboardAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\FormDashboardAdmin.Designer.cs">
-      <DependentUpon>FormDashboardAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="view\FormCustomerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,9 +208,6 @@
     <Compile Include="view\startUp.Designer.cs">
       <DependentUpon>startUp.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="view\FormDashboardAdmin.resx">
-      <DependentUpon>FormDashboardAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="view\FormCustomerDashboard.resx">
       <DependentUpon>FormCustomerDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\ParentAdminDashboard.resx">
       <DependentUpon>ParentAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\ParentCustomerDahsboard.resx">
+      <DependentUpon>ParentCustomerDahsboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\startUp.resx">
       <DependentUpon>startUp.cs</DependentUpon>

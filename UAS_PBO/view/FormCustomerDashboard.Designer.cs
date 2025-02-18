@@ -32,8 +32,6 @@
             this.dgCart = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnSewa = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.dtpSewa = new System.Windows.Forms.DateTimePicker();
@@ -83,25 +81,6 @@
             this.label2.Size = new System.Drawing.Size(197, 34);
             this.label2.TabIndex = 3;
             this.label2.Text = "Daftar Barang";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(906, 29);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(290, 26);
-            this.textBox1.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(825, 32);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 24);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Search";
             // 
             // btnSewa
             // 
@@ -173,8 +152,6 @@
             this.Controls.Add(this.dtpSewa);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSewa);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgCart);
@@ -193,8 +170,6 @@
         private System.Windows.Forms.DataGridView dgCart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSewa;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DateTimePicker dtpSewa;
