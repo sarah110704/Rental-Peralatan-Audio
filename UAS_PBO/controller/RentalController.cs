@@ -302,7 +302,89 @@ namespace UAS_PBO.controller
             return rentalList;
         }
 
+        public List<M_RentalOngoing> GetOngoingRentals(int userID)
+        {
+            List<M_RentalOngoing> rentalList = new List<M_RentalOngoing>();
+            try
+            {
+                koneksi.OpenConnection();
+                string query = $"SELECT r.RentalID, e.Name AS EquipmentName, rd.Quantity, rd.PricePerDay, rd.TotalPrice, r.RentalDate, r.ReturnDate, r.Status " +
+                               $"FROM rental r " +
+                               $"JOIN rentaldetail rd ON r.RentalID = rd.RentalID " +
+                               $"JOIN equipment e ON rd.EquipmentID = e.Id " +
+                               $"WHERE r.UserID = {userID} AND (r.Status = 'Pending' OR r.Status = 'Ongoing')";
 
+                var result = koneksi.reader(query);
+
+                while (result.Read())
+                {
+                    M_RentalOngoing rental = new M_RentalOngoing
+                    {
+                        RentalID = Convert.ToInt32(result["RentalID"]),
+                        EquipmentName = result["EquipmentName"].ToString(),
+                        Quantity = Convert.ToInt32(result["Quantity"]),
+                        PricePerDay = Convert.ToDecimal(result["PricePerDay"]),
+                        TotalPrice = Convert.ToDecimal(result["TotalPrice"]),
+                        RentalDate = Convert.ToDateTime(result["RentalDate"]),
+                        ReturnDate = Convert.ToDateTime(result["ReturnDate"]),
+                        Status = result["Status"].ToString()
+                    };
+                    rentalList.Add(rental);
+                }
+                result.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal mengambil data penyewaan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                koneksi.CloseConnection();
+            }
+            return rentalList;
+        }
+
+        public bool CancelRental(int rentalID)
+        {
+            bool status = false;
+            try
+            {
+                koneksi.OpenConnection();
+
+                // Cek apakah rental masih dalam status "Pending"
+                string checkQuery = $"SELECT Status FROM rental WHERE RentalID = {rentalID}";
+                var result = koneksi.reader(checkQuery);
+
+                string currentStatus = "";
+                if (result.Read())
+                {
+                    currentStatus = result["Status"].ToString();
+                }
+                result.Close();
+
+                if (currentStatus != "Pending")
+                {
+                    MessageBox.Show("Hanya penyewaan dengan status 'Pending' yang bisa dibatalkan!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                // Batalkan penyewaan dengan mengubah status menjadi "Cancelled"
+                string cancelQuery = $"UPDATE rental SET Status = 'Cancelled' WHERE RentalID = {rentalID}";
+                koneksi.ExecuteQueries(cancelQuery);
+
+                status = true;
+                MessageBox.Show("Penyewaan berhasil dibatalkan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membatalkan penyewaan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                koneksi.CloseConnection();
+            }
+            return status;
+        }
 
     }
 }
