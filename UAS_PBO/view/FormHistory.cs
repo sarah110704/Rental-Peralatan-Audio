@@ -18,30 +18,54 @@ namespace UAS_PBO.view
             LoadHistoryData();
         }
 
+        // ✅ Memuat Data Penyewaan yang Berstatus "Completed"
         private void LoadHistoryData()
         {
             dgHistory.Rows.Clear();
             dgHistory.Columns.Clear();
 
+            // 🔹 Definisi Kolom DataGridView
             dgHistory.Columns.Add("rentalID", "ID");
             dgHistory.Columns.Add("userName", "Nama User");
+            dgHistory.Columns.Add("firstName", "Nama Depan");
+            dgHistory.Columns.Add("lastName", "Nama Belakang");
+            dgHistory.Columns.Add("phone", "Nomor HP");
+            dgHistory.Columns.Add("address", "Alamat");
             dgHistory.Columns.Add("rentalDate", "Tanggal Sewa");
             dgHistory.Columns.Add("returnDate", "Tanggal Kembali");
-            dgHistory.Columns.Add("totalPrice", "Total Harga");
+            dgHistory.Columns.Add("equipmentName", "Nama Equipment");
+            dgHistory.Columns.Add("quantity", "Jumlah");
+            dgHistory.Columns.Add("pricePerDay", "Harga/Hari (Rp)");
+            dgHistory.Columns.Add("totalPrice", "Total Harga (Rp)");
 
+            // 🔹 Mengambil data dari database (hanya yang berstatus 'Completed')
             List<M_Rental> rentalList = rentalController.GetCompletedRentals();
 
             foreach (var rental in rentalList)
             {
-                dgHistory.Rows.Add(
-                    rental.RentalID,
-                    rental.UserID, // Jika ada UserName, ganti dengan rental.UserName
-                    rental.RentalDate.ToString("dd-MMM-yyyy"),
-                    rental.ReturnDate.ToString("dd-MMM-yyyy"),
-                    rental.TotalPrice.ToString("C"));
+                List<M_RentalDetail> rentalDetails = rentalController.GetRentalDetails(rental.RentalID);
+
+                foreach (var detail in rentalDetails)
+                {
+                    dgHistory.Rows.Add(
+                        rental.RentalID,
+                        rental.UserName,
+                        rental.FirstName,
+                        rental.LastName,
+                        rental.Phone,
+                        rental.Address,
+                        rental.RentalDate.ToString("dd-MMM-yyyy"),
+                        rental.ReturnDate.ToString("dd-MMM-yyyy"),
+                        detail.EquipmentName,
+                        detail.Quantity,
+                        detail.PricePerDay.ToString("N0"),
+                        detail.TotalPrice.ToString("N0") // Format angka rupiah tanpa desimal
+                    );
+                }
             }
         }
 
+        // ✅ Ekspor Data ke Excel Menggunakan EPPlus
         private void btnExport_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
@@ -50,32 +74,21 @@ namespace UAS_PBO.view
 
             if (save.ShowDialog() == DialogResult.OK)
             {
-                string directory = Path.GetDirectoryName(save.FileName);
-                string fileNameWithoutExt = Path.GetFileNameWithoutExtension(save.FileName);
-                string extension = Path.GetExtension(save.FileName);
-                int count = 1;
                 string filePath = save.FileName;
-
-                while (File.Exists(filePath))
-                {
-                    filePath = Path.Combine(directory, $"{fileNameWithoutExt} ({count}){extension}");
-                    count++;
-                }
-
                 try
                 {
                     using (ExcelPackage excel = new ExcelPackage())
                     {
                         ExcelWorksheet worksheet = excel.Workbook.Worksheets.Add("History Rental");
 
-                        // Header
+                        // 🔹 Header
                         for (int col = 1; col <= dgHistory.Columns.Count; col++)
                         {
                             worksheet.Cells[1, col].Value = dgHistory.Columns[col - 1].HeaderText;
                             worksheet.Cells[1, col].Style.Font.Bold = true;
                         }
 
-                        // Data
+                        // 🔹 Data
                         for (int row = 0; row < dgHistory.Rows.Count; row++)
                         {
                             for (int col = 0; col < dgHistory.Columns.Count; col++)
@@ -84,7 +97,7 @@ namespace UAS_PBO.view
                             }
                         }
 
-                        // Simpan file
+                        // 🔹 Simpan file
                         File.WriteAllBytes(filePath, excel.GetAsByteArray());
 
                         MessageBox.Show("Data berhasil diekspor ke file Excel.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -97,6 +110,7 @@ namespace UAS_PBO.view
             }
         }
 
+        // ✅ Menutup Form History
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

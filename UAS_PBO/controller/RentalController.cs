@@ -117,7 +117,11 @@ namespace UAS_PBO.controller
             try
             {
                 koneksi.OpenConnection();
-                string query = $"SELECT * FROM rentaldetail WHERE RentalID = {rentalID}";
+                string query = "SELECT d.RentalDetailID, d.RentalID, d.EquipmentID, e.Name AS EquipmentName, d.Quantity, d.PricePerDay, d.TotalPrice " +
+                               "FROM rentaldetail d " +
+                               "JOIN equipment e ON d.EquipmentID = e.Id " +
+                               $"WHERE d.RentalID = {rentalID}";
+
                 var result = koneksi.reader(query);
 
                 while (result.Read())
@@ -127,6 +131,7 @@ namespace UAS_PBO.controller
                         RentalDetailID = Convert.ToInt32(result["RentalDetailID"]),
                         RentalID = Convert.ToInt32(result["RentalID"]),
                         EquipmentID = Convert.ToInt32(result["EquipmentID"]),
+                        EquipmentName = result["EquipmentName"].ToString(),
                         Quantity = Convert.ToInt32(result["Quantity"]),
                         PricePerDay = Convert.ToDecimal(result["PricePerDay"]),
                         TotalPrice = Convert.ToDecimal(result["TotalPrice"])
@@ -259,7 +264,11 @@ namespace UAS_PBO.controller
             try
             {
                 koneksi.OpenConnection();
-                string query = "SELECT * FROM rental WHERE Status = 'Completed'";
+                string query = "SELECT r.RentalID, r.UserID, u.Username, u.FirstName, u.LastName, u.PhoneNumber, u.Address, r.RentalDate, r.ReturnDate, r.TotalPrice, r.Status " +
+                               "FROM rental r " +
+                               "JOIN users u ON r.UserID = u.Id " +
+                               "WHERE r.Status = 'Completed'";
+
                 var result = koneksi.reader(query);
 
                 while (result.Read())
@@ -268,6 +277,11 @@ namespace UAS_PBO.controller
                     {
                         RentalID = Convert.ToInt32(result["RentalID"]),
                         UserID = Convert.ToInt32(result["UserID"]),
+                        UserName = result["Username"].ToString(),
+                        FirstName = result["FirstName"].ToString(),
+                        LastName = result["LastName"].ToString(),
+                        Phone = result["PhoneNumber"].ToString(),
+                        Address = result["Address"].ToString(),
                         RentalDate = Convert.ToDateTime(result["RentalDate"]),
                         ReturnDate = Convert.ToDateTime(result["ReturnDate"]),
                         TotalPrice = Convert.ToDecimal(result["TotalPrice"]),
@@ -279,7 +293,7 @@ namespace UAS_PBO.controller
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Gagal mengambil data history penyewaan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Gagal mengambil data rental: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -287,6 +301,8 @@ namespace UAS_PBO.controller
             }
             return rentalList;
         }
+
+
 
     }
 }
