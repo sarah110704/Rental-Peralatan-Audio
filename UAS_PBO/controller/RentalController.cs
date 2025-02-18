@@ -252,5 +252,41 @@ namespace UAS_PBO.controller
             }
             return rentalList;
         }
+
+        public List<M_Rental> GetCompletedRentals()
+        {
+            List<M_Rental> rentalList = new List<M_Rental>();
+            try
+            {
+                koneksi.OpenConnection();
+                string query = "SELECT * FROM rental WHERE Status = 'Completed'";
+                var result = koneksi.reader(query);
+
+                while (result.Read())
+                {
+                    M_Rental rental = new M_Rental
+                    {
+                        RentalID = Convert.ToInt32(result["RentalID"]),
+                        UserID = Convert.ToInt32(result["UserID"]),
+                        RentalDate = Convert.ToDateTime(result["RentalDate"]),
+                        ReturnDate = Convert.ToDateTime(result["ReturnDate"]),
+                        TotalPrice = Convert.ToDecimal(result["TotalPrice"]),
+                        Status = result["Status"].ToString()
+                    };
+                    rentalList.Add(rental);
+                }
+                result.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal mengambil data history penyewaan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                koneksi.CloseConnection();
+            }
+            return rentalList;
+        }
+
     }
 }

@@ -39,14 +39,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.History = new System.Windows.Forms.Button();
+            this.btnHapus = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.dgRental = new System.Windows.Forms.DataGridView();
             this.SearchRentals = new System.Windows.Forms.TextBox();
             this.buttnrfrsh = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnHapus = new System.Windows.Forms.Button();
-            this.History = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -209,6 +209,49 @@
             this.panel3.Size = new System.Drawing.Size(1004, 617);
             this.panel3.TabIndex = 4;
             // 
+            // History
+            // 
+            this.History.Location = new System.Drawing.Point(847, 298);
+            this.History.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.History.Name = "History";
+            this.History.Size = new System.Drawing.Size(144, 42);
+            this.History.TabIndex = 24;
+            this.History.Text = "History";
+            this.History.UseVisualStyleBackColor = true;
+            this.History.Click += new System.EventHandler(this.History_Click);
+            // 
+            // btnHapus
+            // 
+            this.btnHapus.Location = new System.Drawing.Point(847, 230);
+            this.btnHapus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(144, 42);
+            this.btnHapus.TabIndex = 23;
+            this.btnHapus.Text = "Hapus";
+            this.btnHapus.UseVisualStyleBackColor = true;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(847, 162);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(144, 42);
+            this.btnEdit.TabIndex = 22;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(37, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(279, 37);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Daftar Penyewaan";
+            // 
             // dgRental
             // 
             this.dgRental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -249,48 +292,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 109);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(279, 37);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Daftar Penyewaan";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(847, 162);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(144, 42);
-            this.btnEdit.TabIndex = 22;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnHapus
-            // 
-            this.btnHapus.Location = new System.Drawing.Point(847, 230);
-            this.btnHapus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(144, 42);
-            this.btnHapus.TabIndex = 23;
-            this.btnHapus.Text = "Hapus";
-            this.btnHapus.UseVisualStyleBackColor = true;
-            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
-            // 
-            // History
-            // 
-            this.History.Location = new System.Drawing.Point(847, 298);
-            this.History.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.History.Name = "History";
-            this.History.Size = new System.Drawing.Size(144, 42);
-            this.History.TabIndex = 24;
-            this.History.Text = "History";
-            this.History.UseVisualStyleBackColor = true;
             // 
             // ManajemenRental
             // 

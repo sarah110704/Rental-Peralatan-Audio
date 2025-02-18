@@ -270,5 +270,11 @@ namespace UAS_PBO.view
             DeleteRental(rentalID);
         }
 
+        private void History_Click(object sender, EventArgs e)
+        {
+            FormHistory formHistory = new FormHistory();
+            formHistory.ShowDialog();
+
+        }
     }
 }
